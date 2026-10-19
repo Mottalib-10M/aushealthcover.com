@@ -30,7 +30,7 @@ const family = (g: string) => PAGES.filter((p) => p.group === g);
   <header class="mb-4">
     <h1 class="font-serif text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{x.h1}</h1>
     <p class="mt-2 text-base text-navy-700 sm:text-lg">{x.intro}</p>
-    <p class="mt-1 text-sm text-navy-600">Thresholds read on ato.gov.au, premiums from the PrivateHealth.gov.au file of {K.day(K.PREM.release)} · <a href={route('method', lang)} class="underline">How the figures are built</a> · <a href={route('about', lang)} class="underline">Who publishes this</a></p>
+    <p class="mt-1 text-sm text-navy-600">Thresholds read on ato.gov.au, premiums from the PrivateHealth.gov.au file of {K.day(K.PREM.release)} · <a href={route('method', lang)} class="underline">How the figures are built</a> · <a href={route('about', lang)} class="underline">Who publishes this</a> · estimates only, not tax advice</p>
   </header>
   <div data-outil data-chrome><Tool kind="cover" idPrefix="home" /></div>
   <dl data-chrome class="my-6 grid grid-cols-2 border-y border-navy-200 py-3 text-sm sm:grid-cols-4">
