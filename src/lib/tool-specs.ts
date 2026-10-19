@@ -28,7 +28,7 @@ const withKids = (v: V) => st(v) === 'family' || st(v) === 'singleParent';
 const STATUS_OPTS: Opt[] = (Object.keys(STATUS_NAMES) as Status[]).map((k) => ({ value: k, label: STATUS_NAMES[k] }));
 const statusIn = (def: Status = 'single'): Input => ({ kind: 'select', id: 'st', label: 'Your situation on 30 June', def, options: STATUS_OPTS });
 const kidsIn = (def = 2): Input => ({ id: 'ch', label: 'Dependent children', def, unit: 'kids', max: 15, help: 'Under 21, or 21 to 24 in full-time study', show: withKids });
-const incIn = (def = 130000, label = 'Your income for MLS purposes'): Input => ({ id: 'inc', label, def, unit: '$', max: 5000000, help: 'Taxable income plus fringe benefits, super contributions, investment losses' });
+const incIn = (def = 130000, label = 'Your income for MLS purposes', help: string | undefined = 'Taxable income plus fringe benefits, super contributions, investment losses'): Input => ({ id: 'inc', label, def, unit: '$', max: 5000000, ...(help ? { help } : {}) });
 const pincIn = (def = 70000): Input => ({ id: 'pinc', label: "Partner's income for MLS purposes", def, unit: '$', max: 5000000, show: couple });
 const REGION_OPTS: Opt[] = REGIONS.map((r) => ({ value: r, label: REGION_SHORT[r] }));
 const regionIn = (def: Region = 'NSW', adv = false): Input => ({ kind: 'select', id: 'rg', label: 'State or territory', def, options: REGION_OPTS, adv });
@@ -135,7 +135,7 @@ export const SPECS: Record<string, (arg?: Record<string, number | string>) => To
   }),
   /* The cost of waiting before joining */
   wait: () => ({
-    inputs: [{ id: 'age', label: 'Your age on 1 July 2026', def: 31, unit: 'yrs', max: 100 }, { id: 'yrs', label: 'Years you wait before joining', def: 3, unit: 'yrs', max: 30 }, incIn(115000, 'Income for MLS purposes'), regionIn('NSW')],
+    inputs: [{ id: 'age', label: 'Your age on 1 July 2026', def: 31, unit: 'yrs', max: 100 }, { id: 'yrs', label: 'Years you wait before joining', def: 3, unit: 'yrs', max: 30 }, incIn(115000, 'Income for MLS purposes', ''), regionIn('NSW')],
     run: (v) => {
       const now = lhcLoading(n(v, 'age')), later = lhcLoading(n(v, 'age') + n(v, 'yrs'));
       const gross = cell(rg(v), 'single').cheapest.monthly * 12, t = tierOf(n(v, 'inc'), 'single');
@@ -166,7 +166,7 @@ export const SPECS: Record<string, (arg?: Record<string, number | string>) => To
   }),
   /* Joining part way through the year */
   partyear: () => ({
-    inputs: [{ id: 'gone', label: 'Months already without cover since 1 July', def: 4, unit: 'mths', max: 12 }, statusIn('single'), incIn(125000), pincIn(70000), kidsIn(2), regionIn('NSW'), ageIn(35, true), lhcIn(0, true)],
+    inputs: [{ id: 'gone', label: 'Months already without cover since 1 July', def: 4, unit: 'mths', max: 12 }, statusIn('single'), incIn(125000, 'Your income for MLS purposes', ''), pincIn(70000), kidsIn(2), regionIn('NSW'), ageIn(35, true), lhcIn(0, true)],
     run: (v) => {
       const g = Math.min(12, n(v, 'gone')), x = { ...persons(v), region: rg(v), oldest: n(v, 'age'), loading: n(v, 'lhc') / 100 };
       const stay = mls({ ...x, daysWithout: DAYS }).total;
@@ -182,7 +182,7 @@ export const SPECS: Record<string, (arg?: Record<string, number | string>) => To
   }),
   /* Building the income for MLS purposes */
   income: () => ({
-    inputs: [{ id: 'ti', label: 'Taxable income', def: 98000, unit: '$', max: 5000000 }, { id: 'rfb', label: 'Reportable fringe benefits', def: 12000, unit: '$', max: 2000000, help: 'Grossed-up amount on your income statement' }, { id: 'sup', label: 'Reportable super contributions', def: 0, unit: '$', max: 500000, help: 'Salary sacrifice and deductible personal contributions' }, { id: 'inv', label: 'Net investment losses', def: 0, unit: '$', max: 2000000, help: 'Rental and financial investment losses' }, statusIn('single'), pincIn(0), kidsIn(1)],
+    inputs: [{ id: 'ti', label: 'Taxable income', def: 98000, unit: '$', max: 5000000 }, { id: 'rfb', label: 'Reportable fringe benefits', def: 12000, unit: '$', max: 2000000, help: 'Grossed-up amount on your income statement' }, { id: 'sup', label: 'Reportable super contributions', def: 0, unit: '$', max: 500000, help: 'Reportable employer and deductible personal contributions' }, { id: 'inv', label: 'Net investment losses', def: 0, unit: '$', max: 2000000, help: 'Rental and financial investment losses' }, statusIn('single'), pincIn(0), kidsIn(1)],
     run: (v) => {
       const inc = n(v, 'ti') + n(v, 'rfb') + n(v, 'sup') + n(v, 'inv'), base = n(v, 'ti') + n(v, 'rfb');
       const m = mls({ status: st(v), children: n(v, 'ch'), you: { mlsIncome: inc, base }, partner: couple(v) ? { mlsIncome: n(v, 'pinc') } : undefined });

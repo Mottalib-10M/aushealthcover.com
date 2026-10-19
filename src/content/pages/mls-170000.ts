@@ -10,6 +10,8 @@ const tiersUnder = K.HT.filter((t) => nsw.byTier[t] && nsw.byTier[t].median <= c
 const below = K.mls({ status: 'single', you: { mlsIncome: M.single[2] } }).total;
 const loaded = K.cmp({ status: 'single', you: { mlsIncome: INC }, region: 'NSW', oldest: 45, loading: K.lhc(45), monthlyPremium: nsw.median });
 const extrasEx = 1200;
+const goldDearer = K.REGIONS.filter((r) => K.cell(r, 'single').byTier.Gold && y(K.cell(r, 'single').byTier.Gold.median) >= m.total).length;
+const medCheaper = K.REGIONS.filter((r) => y(K.cell(r, 'single').median) < m.total).length;
 
 export default definePage({
   id: 'mls-170000', group: 'income', order: 4, slug: 'mls-170000',
@@ -24,13 +26,13 @@ export default definePage({
   faqs: [
     { q: 'Is there any private health insurance rebate at $170,000?', a: `No. A single person whose income for surcharge purposes is ${K.usd(M.single[2] + 1)} or more is in tier 3, where the rebate is 0 % at every age, for hospital, general treatment and ambulance policies alike. If you have been taking the rebate as a premium reduction, ask your insurer to remove it, or expect to repay it when you lodge.` },
     { q: 'What premium beats a tier 3 surcharge?', a: `Any policy whose full yearly premium, plus loading, is below the surcharge. At ${K.usd(INC)} that means under ${K.usd(m.total)} a year, or ${K.usd2(ceilMonthly)} a month, for a single person. With no rebate in tier 3, the premium on the quote is the price, which makes the comparison easy to do yourself from any policy statement.` },
-    { q: 'Does cover still win at $170,000 with a late-joining loading?', a: `Often, but not always. A person who first joins at 45 carries a ${K.pct(K.lhc(45), 0)} loading. On the median NSW single policy that gives ${K.usd(loaded.premium.net)} a year against a ${K.usd(loaded.mls.total)} surcharge. On the cheapest exempt policy, cover still wins by a wide margin.` },
+    { q: 'Does cover still win at $170,000 with a late-joining loading?', a: `Not always. A person who first joins at 45 carries a ${K.pct(K.lhc(45), 0)} loading. On the median NSW single policy that gives ${K.usd(loaded.premium.net)} a year against a ${K.usd(loaded.mls.total)} surcharge. On the cheapest exempt policy, cover still wins by a wide margin.` },
   ],
   body: (h) => `
 <h2>The full premium is the price</h2>
 <p>Below tier 3, every comparison between the surcharge and a policy has to take the rebate into account, and the rebate itself changes with income and age. In tier 3 it does not exist. The ATO's eligibility page sets the condition plainly: to receive the rebate, your income for surcharge purposes must be less than the tier 3 threshold. For a single person in ${P.incomeYear} that threshold is ${K.usd(M.single[2] + 1)}. So at ${K.usd(INC)} a hospital policy costs you its full premium, plus any loading, and nothing else enters the sum.</p>
 ${h.table(['State or territory', 'Surcharge without cover', 'Cheapest exempt policy a year', 'Median exempt policy a year', 'Median Gold a year'], K.REGIONS.map((r) => { const c = K.cell(r, 'single'); const fmt = (v: number) => `${K.usd(y(v))}${y(v) < m.total ? '' : ' (dearer)'}`; return [K.RS[r], K.usd(m.total), fmt(c.cheapest.monthly), fmt(c.median), c.byTier.Gold ? fmt(c.byTier.Gold.median) : 'none']; }), `Single, aged 35, no loading, tier 3, no rebate. "Dearer" marks a premium above the surcharge. PrivateHealth.gov.au file of ${K.day(K.PREM.release)}.`, ['l', 'r', 'r', 'r', 'r'])}
-<p>The pattern is clear from the table: at ${K.usd(INC)}, the median exempt policy costs less than the surcharge in every state, while a median Gold policy costs more in most of them. The tax pays for mid-range cover at this income, not for the top tier.</p>
+<p>The pattern is clear from the table: at ${K.usd(INC)}, the median exempt policy costs less than the surcharge in ${medCheaper} of the ${K.REGIONS.length} regions, while a median Gold policy costs more in ${goldDearer} of them. The tax pays for mid-range cover at this income, not for the top tier.</p>
 ${h.mini('cover', { t: 'Test your own premium at tier 3', p: ['inc', 'prem', 'lhc'], d: { inc: INC, prem: 210, lhc: 0 }, c: 'Open the cover or surcharge calculator' })}
 
 <h2>Extras lose their rebate too</h2>
@@ -38,6 +40,9 @@ ${h.mini('cover', { t: 'Test your own premium at tier 3', p: ['inc', 'prem', 'lh
 
 <h2>Getting back under the line</h2>
 <p>You are ${K.usd(INC - M.single[2])} above the tier 2 ceiling of ${K.usd(M.single[2])}, where the surcharge would be ${K.usd(below)} and the rebate ${K.pct(K.reb(2, 35), 3)}. Salary sacrifice into super does not lower your tier, because reportable super contributions count in income for MLS purposes; it does lower the base the rate is charged on. Deductions you are entitled to lower taxable income, and so both. The ${h.a('income-for-mls-purposes', 'income for MLS purposes page')} has the components, and the ${h.a('mls-150000', '$150,000 page')} shows how the mix of income changes the bill in tier 2.</p>
+
+<h2>Age brings no rebate here</h2>
+<p>Below tier 3, people aged 65 and over receive a higher rebate than younger ones, up to ${K.pct(K.reb(0, 72), 3)} at the base tier from age 70. In tier 3 every age band gets 0 %. The proposal before Parliament to move the over 65 rates down to the under 65 ones from 1 April 2027 would therefore change nothing at this income: the tier 3 rebate is already zero in every row. The surcharge, likewise, does not depend on age. A retiree whose taxable income is ${K.usd(INC)} faces the same ${K.usd(m.total)} as a salaried worker on the same income. The ${h.a('rebate-over-65', 'over 65 page')} covers the lower tiers, where the proposal does matter.</p>
 
 <h2>Couples at this income</h2>
 <p>For a couple, ${K.usd(INC)} on one side is not tier 3 unless the combined income is over ${K.usd(M.family[2])}. With a partner earning ${K.usd(60000)}, the couple's ${K.usd(INC + 60000)} is in ${K.TN[K.tier(INC + 60000, 'couple')].toLowerCase()} of the family scale, with a rebate of ${K.pct(K.reb(K.tier(INC + 60000, 'couple'), 35), 3)}. The ${h.a('mls-family-230000', 'family $230,000 page')} works through that case with children.</p>
