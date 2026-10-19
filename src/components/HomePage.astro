@@ -1,0 +1,59 @@
+---
+/**
+ * Home, in its own order: the cover-or-surcharge calculator, four facts of the year on a ruled line, the folded
+ * answer, the cheapest exempt policy by state and cover type (table, linked to the state pages), the prose on why
+ * the policy file changes the answer, topics by family, long text in accordions, FAQ. Text: src/content/home.ts.
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import Clamp from './Clamp.astro';
+import Tool from './Tool.astro';
+import Body from './Body.astro';
+import { HOME } from '../content/home';
+import { route, ROUTES } from '../i18n/routes';
+import { GROUPS } from '../i18n/nav';
+import { helpers, SOURCES, table } from '../lib/helpers';
+import { PAGES } from '../lib/pages';
+import { KIT as K } from '../lib/kit';
+import { faqSchema, organizationSchema, websiteSchema, webPageSchema, webApplicationSchema } from '../lib/seo';
+const lang = 'en';
+const x = HOME;
+const path = route('home', lang);
+const h = helpers();
+const sources = x.sources.map((k) => ({ name: SOURCES[k].label, url: SOURCES[k].url }));
+const jsonLd = [websiteSchema(lang), organizationSchema(lang), webPageSchema({ name: x.h1, description: x.description, path, lang }), webApplicationSchema({ name: x.h1, description: x.description, path, lang }), faqSchema(x.faqs, lang)];
+const facts = x.facts(h);
+const statePage = (r: string) => { const id = `state-${r.toLowerCase()}`; return ROUTES.some((q) => q.id === id) ? `<a href="${route(id, lang)}">${K.RS[r as keyof typeof K.RS]}</a>` : K.RS[r as keyof typeof K.RS]; };
+const rows = [...K.REGIONS].sort((a, b) => K.cell(a, 'single').cheapest.monthly - K.cell(b, 'single').cheapest.monthly).map((r) => [statePage(r), K.usd2(K.cell(r, 'single').cheapest.monthly), K.usd2(K.cell(r, 'couple').cheapest.monthly), K.usd2(K.cell(r, 'singleParent').cheapest.monthly), K.usd2(K.cell(r, 'family').cheapest.monthly), K.usd2(K.cell(r, 'single').median)]);
+const family = (g: string) => PAGES.filter((p) => p.group === g);
+---
+<PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={x.faqs} sources={sources}>
+  <header class="mb-4">
+    <h1 class="font-serif text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{x.h1}</h1>
+    <p class="mt-2 text-base text-navy-700 sm:text-lg">{x.intro}</p>
+    <p class="mt-1 text-sm text-navy-600">Thresholds read on ato.gov.au, premiums from the PrivateHealth.gov.au file of {K.day(K.PREM.release)} · <a href={route('method', lang)} class="underline">How the figures are built</a> · <a href={route('about', lang)} class="underline">Who publishes this</a></p>
+  </header>
+  <div data-outil data-chrome><Tool kind="cover" idPrefix="home" /></div>
+  <dl data-chrome class="my-6 grid grid-cols-2 border-y border-navy-200 py-3 text-sm sm:grid-cols-4">
+    {facts.map((f) => <div class="px-2 py-1"><dt class="text-navy-600">{f.k}</dt><dd class="font-serif text-lg font-bold text-navy-900"><Fragment set:html={f.v} /></dd></div>)}
+  </dl>
+  <Clamp text={x.resume} lang={lang} id="clamp-home" class="my-8" />
+  <section class="mt-10" data-chrome>
+    <h2 class="font-serif text-2xl font-bold text-navy-900">Cheapest hospital cover that avoids the surcharge, by state</h2>
+    <Fragment set:html={table(['State or territory', 'Single', 'Couple', 'Single parent', 'Family', 'Single, median'], rows, `Monthly premium before the rebate, open insurers only, excess within the surcharge limits. PrivateHealth.gov.au file of ${K.day(K.PREM.release)}. The ACT buys the NSW policies.`, ['l', 'r', 'r', 'r', 'r', 'r'])} />
+  </section>
+  <section class="prose prose-slate max-w-none prose-headings:font-serif"><Body html={x.why(h)} path={path} /></section>
+  <section class="mt-10" data-chrome>
+    {GROUPS.filter((g) => family(g.id).length).map((g) => (
+      <div class="mb-6">
+        <h2 class="font-serif text-xl font-bold text-navy-900">{g.label}</h2>
+        <ul class="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+          {family(g.id).map((p) => <li><a href={route(p.id, lang)} class="font-medium text-accent-700 underline-offset-2 hover:underline">{p.nav}</a><span class="block text-navy-600">{p.card}</span></li>)}
+        </ul>
+      </div>
+    ))}
+  </section>
+  <section class="mt-10">
+    <h2 class="font-serif text-2xl font-bold text-navy-900">Before you lodge your return or sign up</h2>
+    {x.sections(h).map((s) => <details class="fold"><summary><h3 class="fold-h">{s.title}</h3></summary><div class="prose prose-slate max-w-none pb-4"><Body html={s.html} path={path} /></div></details>)}
+  </section>
+</PageLayout>

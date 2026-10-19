@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'en';
+const path = route('contact', lang);
+const description = `Write to the publisher of ${SITE_NAMES.en} about a 2026-27 threshold, a rebate rate, a loading rule or a premium. E-mail only, no advice on your case, no policy sold.`;
+---
+<PageLayout title={`Contact ${SITE_NAMES.en} 2026: corrections and sources`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path, lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h1>Contact</h1>
+    <p>Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. There is no form, no phone line and no account: one e-mail address, read by the people who maintain the calculators.</p>
+    <h2>Messages that help</h2>
+    <ul>
+      <li>A threshold, a surcharge rate or a rebate percentage that differs from the ATO page: give the page and the figure you see.</li>
+      <li>A Lifetime Health Cover case our calculator handles differently from your insurer's clearance certificate, with the dates involved.</li>
+      <li>A premium that no longer matches the policy's current Private Health Information Statement.</li>
+      <li>A new official figure (the 1 April rebate rates, next year's thresholds, a bill passed by Parliament) that we have not entered yet.</li>
+      <li>Embedding the calculator on a blog, a forum or an employer intranet: the code is on the <a href={route('widget', lang)}>embed page</a>.</li>
+    </ul>
+    <h2>What we cannot do</h2>
+    <p>We cannot look at your tax return, tell you which policy to buy, obtain a quote or act on a claim. Your assessment comes from the ATO, your loading and rebate are applied by your insurer, and the Private Health Insurance Ombudsman deals with complaints about insurers. We are not a government office.</p>
+    <h2>Publisher</h2>
+    <LegalIdentity lang={lang} />
+  </div>
+</PageLayout>

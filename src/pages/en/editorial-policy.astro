@@ -1,0 +1,21 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { AUTHOR_NAME, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy of ${SITE_NAMES.en} 2026: sources, fixes`} description={`How ${SITE_NAMES.en} writes its 2026-27 pages: ATO and Ombudsman texts only, every figure read from one parameter file, bills labeled as bills, no money from insurers.`} lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h1>Editorial policy</h1>
+    <h2>What counts as a source</h2>
+    <p>Only primary texts: the ATO pages and tax return instructions, the Department of Health circulars and announcements, the PrivateHealth.gov.au pages of the Private Health Insurance Ombudsman, the product file it publishes on data.gov.au, and bills and acts on the Parliament of Australia site. News articles, insurer blogs and other calculators can point us to a change; we publish it only once we have read the primary text.</p>
+    <h2>How a figure reaches a page</h2>
+    <p>Each amount is entered once, in a parameter file, with the link to its source and the date it was read. Pages and calculators read that file; nobody types a figure into a page. Premiums come from a script that reads the Ombudsman's file and can be run again on each monthly release. When an amount changes, every page that uses it changes at the same time.</p>
+    <h2>Bills and announcements are labeled</h2>
+    <p>A change announced by the government or a bill before Parliament, such as the proposed rebate change for people aged 65 and over from 1 April 2027, is shown as a proposal with its date and status, never as the rule. A figure we could not confirm, such as a 2026-27 amount the ATO has not yet published, is shown with the year it belongs to.</p>
+    <h2>Independence</h2>
+    <p>{AUTHOR_NAME} receives nothing from health insurers, brokers or comparison services, and the site carries no affiliate links and no quote form. Naming the cheapest policy in the public file is a figure, not a recommendation. The site is not affiliated with the ATO or any government body and does not present itself as one.</p>
+    <h2>Review and corrections</h2>
+    <p>Every page is reviewed at least every {REVIEW_CYCLE_MONTHS} months and whenever a rule it relies on changes: in practice each 1 April for the rebate and premiums, each 1 July for the thresholds, and each month for the policy file. A reported error is checked against the primary text; if we were wrong, the page is corrected and dated. Write through the <a href={route('contact', lang)}>contact page</a>.</p>
+  </div>
+</PageLayout>

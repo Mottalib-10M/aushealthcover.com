@@ -1,0 +1,2202 @@
+{
+ "release": "2026-10-01",
+ "readOn": "2026-10-19",
+ "source": "https://data.gov.au/data/dataset/private-health-insurance",
+ "licence": "CC BY 3.0 AU",
+ "productsInFile": 31864,
+ "kept": 17352,
+ "skipped": {
+  "restricted fund": 4713,
+  "corporate product": 8500,
+  "sold only with another product": 1395,
+  "other cover type": 48
+ },
+ "openFunds": 25,
+ "restrictedFunds": 9,
+ "cells": {
+  "NSW:single": {
+   "n": 435,
+   "funds": 22,
+   "cheapest": {
+    "fund": "ahm health insurance",
+    "product": "ambulance hospital (basic)",
+    "tier": "Basic",
+    "monthly": 102.6,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 103.39,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 104.05,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    }
+   ],
+   "median": 186.1,
+   "byTier": {
+    "Basic": {
+     "cheapest": 102.6,
+     "fund": "ahm health insurance",
+     "median": 111.58,
+     "n": 22
+    },
+    "BasicPlus": {
+     "cheapest": 111.6,
+     "fund": "GMHBA Limited",
+     "median": 125.88,
+     "n": 51
+    },
+    "Bronze": {
+     "cheapest": 123.91,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 138.2,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 121.79,
+     "fund": "see-u by HBF",
+     "median": 151.55,
+     "n": 89
+    },
+    "Silver": {
+     "cheapest": 167.95,
+     "fund": "GMHBA Limited",
+     "median": 192.89,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 157.3,
+     "fund": "ahm health insurance",
+     "median": 253.2,
+     "n": 195
+    },
+    "Gold": {
+     "cheapest": 243.4,
+     "fund": "Medibank Private Limited",
+     "median": 375.2,
+     "n": 39
+    }
+   }
+  },
+  "NSW:couple": {
+   "n": 434,
+   "funds": 22,
+   "cheapest": {
+    "fund": "ahm health insurance",
+    "product": "ambulance hospital (basic)",
+    "tier": "Basic",
+    "monthly": 205.2,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 206.78,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 208.1,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 369.49,
+   "byTier": {
+    "Basic": {
+     "cheapest": 205.2,
+     "fund": "ahm health insurance",
+     "median": 223.14,
+     "n": 21
+    },
+    "BasicPlus": {
+     "cheapest": 223.2,
+     "fund": "GMHBA Limited",
+     "median": 251.76,
+     "n": 51
+    },
+    "Bronze": {
+     "cheapest": 247.82,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 276.4,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 243.58,
+     "fund": "see-u by HBF",
+     "median": 303.1,
+     "n": 89
+    },
+    "Silver": {
+     "cheapest": 335.9,
+     "fund": "GMHBA Limited",
+     "median": 379.82,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 314.6,
+     "fund": "ahm health insurance",
+     "median": 499.76,
+     "n": 195
+    },
+    "Gold": {
+     "cheapest": 486.8,
+     "fund": "Medibank Private Limited",
+     "median": 750.4,
+     "n": 39
+    }
+   }
+  },
+  "NSW:singleParent": {
+   "n": 720,
+   "funds": 21,
+   "cheapest": {
+    "fund": "GMHBA Limited",
+    "product": "Frank Basic Accident Boost Hospital",
+    "tier": "Basic",
+    "monthly": 156.05,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "Phoenix Health Fund Limited",
+     "product": "Basic Accident Only Hospital",
+     "tier": "Basic",
+     "monthly": 158.4,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 165.42,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 336.69,
+   "byTier": {
+    "Basic": {
+     "cheapest": 156.05,
+     "fund": "GMHBA Limited",
+     "median": 194.18,
+     "n": 31
+    },
+    "BasicPlus": {
+     "cheapest": 167.4,
+     "fund": "GMHBA Limited",
+     "median": 218.39,
+     "n": 77
+    },
+    "Bronze": {
+     "cheapest": 185.87,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 250.87,
+     "n": 42
+    },
+    "BronzePlus": {
+     "cheapest": 181.7,
+     "fund": "Medibank Private Limited",
+     "median": 263.46,
+     "n": 147
+    },
+    "Silver": {
+     "cheapest": 268.7,
+     "fund": "GMHBA Limited",
+     "median": 334.9,
+     "n": 21
+    },
+    "SilverPlus": {
+     "cheapest": 239.13,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 432.66,
+     "n": 329
+    },
+    "Gold": {
+     "cheapest": 386.8,
+     "fund": "Medibank Private Limited",
+     "median": 682.26,
+     "n": 73
+    }
+   }
+  },
+  "NSW:family": {
+   "n": 821,
+   "funds": 22,
+   "cheapest": {
+    "fund": "ahm health insurance",
+    "product": "ambulance hospital (basic)",
+    "tier": "Basic",
+    "monthly": 205.2,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 206.78,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 208.1,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 431.86,
+   "byTier": {
+    "Basic": {
+     "cheapest": 205.2,
+     "fund": "ahm health insurance",
+     "median": 239.65,
+     "n": 33
+    },
+    "BasicPlus": {
+     "cheapest": 223.2,
+     "fund": "GMHBA Limited",
+     "median": 289.86,
+     "n": 93
+    },
+    "Bronze": {
+     "cheapest": 247.82,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 315.09,
+     "n": 44
+    },
+    "BronzePlus": {
+     "cheapest": 243.58,
+     "fund": "see-u by HBF",
+     "median": 344.7,
+     "n": 166
+    },
+    "Silver": {
+     "cheapest": 335.9,
+     "fund": "GMHBA Limited",
+     "median": 437.76,
+     "n": 31
+    },
+    "SilverPlus": {
+     "cheapest": 314.6,
+     "fund": "ahm health insurance",
+     "median": 543.1,
+     "n": 378
+    },
+    "Gold": {
+     "cheapest": 486.8,
+     "fund": "Medibank Private Limited",
+     "median": 844.14,
+     "n": 76
+    }
+   }
+  },
+  "VIC:single": {
+   "n": 455,
+   "funds": 22,
+   "cheapest": {
+    "fund": "ahm health insurance",
+    "product": "ambulance hospital (basic)",
+    "tier": "Basic",
+    "monthly": 102.1,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 102.34,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "HBF Health Limited",
+     "product": "Basic Hospital Accident Only $750/$1500 Excess",
+     "tier": "Basic",
+     "monthly": 102.5,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": false
+    }
+   ],
+   "median": 196.06,
+   "byTier": {
+    "Basic": {
+     "cheapest": 102.1,
+     "fund": "ahm health insurance",
+     "median": 112.85,
+     "n": 23
+    },
+    "BasicPlus": {
+     "cheapest": 110.33,
+     "fund": "HCi",
+     "median": 126.45,
+     "n": 55
+    },
+    "Bronze": {
+     "cheapest": 132.8,
+     "fund": "ahm health insurance",
+     "median": 146.05,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 127.93,
+     "fund": "see-u by HBF",
+     "median": 156.88,
+     "n": 94
+    },
+    "Silver": {
+     "cheapest": 179.35,
+     "fund": "GMHBA Limited",
+     "median": 204.6,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 167.45,
+     "fund": "HCF",
+     "median": 266.95,
+     "n": 203
+    },
+    "Gold": {
+     "cheapest": 248.55,
+     "fund": "Mildura Health Fund",
+     "median": 418.25,
+     "n": 41
+    }
+   }
+  },
+  "VIC:couple": {
+   "n": 454,
+   "funds": 22,
+   "cheapest": {
+    "fund": "ahm health insurance",
+    "product": "ambulance hospital (basic)",
+    "tier": "Basic",
+    "monthly": 204.2,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 204.68,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "HBF Health Limited",
+     "product": "Basic Hospital Accident Only $750/$1500 Excess",
+     "tier": "Basic",
+     "monthly": 205.01,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": false
+    }
+   ],
+   "median": 392.01,
+   "byTier": {
+    "Basic": {
+     "cheapest": 204.2,
+     "fund": "ahm health insurance",
+     "median": 223.35,
+     "n": 22
+    },
+    "BasicPlus": {
+     "cheapest": 220.67,
+     "fund": "HCi",
+     "median": 252.9,
+     "n": 55
+    },
+    "Bronze": {
+     "cheapest": 265.6,
+     "fund": "ahm health insurance",
+     "median": 292.1,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 255.86,
+     "fund": "see-u by HBF",
+     "median": 312.35,
+     "n": 94
+    },
+    "Silver": {
+     "cheapest": 358.75,
+     "fund": "GMHBA Limited",
+     "median": 400.51,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 334.9,
+     "fund": "HCF",
+     "median": 529.51,
+     "n": 203
+    },
+    "Gold": {
+     "cheapest": 497.1,
+     "fund": "Mildura Health Fund",
+     "median": 835.37,
+     "n": 41
+    }
+   }
+  },
+  "VIC:singleParent": {
+   "n": 760,
+   "funds": 21,
+   "cheapest": {
+    "fund": "GMHBA Limited",
+    "product": "Frank Basic Accident Boost Hospital",
+    "tier": "Basic",
+    "monthly": 154.5,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "Phoenix Health Fund Limited",
+     "product": "Basic Accident Only Hospital",
+     "tier": "Basic",
+     "monthly": 161.54,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 163.74,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 351.33,
+   "byTier": {
+    "Basic": {
+     "cheapest": 154.5,
+     "fund": "GMHBA Limited",
+     "median": 197.07,
+     "n": 33
+    },
+    "BasicPlus": {
+     "cheapest": 168.7,
+     "fund": "GMHBA Limited",
+     "median": 220.57,
+     "n": 85
+    },
+    "Bronze": {
+     "cheapest": 199.7,
+     "fund": "GMHBA Limited",
+     "median": 267.24,
+     "n": 42
+    },
+    "BronzePlus": {
+     "cheapest": 191.4,
+     "fund": "Medibank Private Limited",
+     "median": 275.35,
+     "n": 157
+    },
+    "Silver": {
+     "cheapest": 287.0,
+     "fund": "GMHBA Limited",
+     "median": 352.5,
+     "n": 21
+    },
+    "SilverPlus": {
+     "cheapest": 264.2,
+     "fund": "Latrobe Health Services",
+     "median": 453.8,
+     "n": 345
+    },
+    "Gold": {
+     "cheapest": 397.65,
+     "fund": "Mildura Health Fund",
+     "median": 742.56,
+     "n": 77
+    }
+   }
+  },
+  "VIC:family": {
+   "n": 861,
+   "funds": 22,
+   "cheapest": {
+    "fund": "ahm health insurance",
+    "product": "ambulance hospital (basic)",
+    "tier": "Basic",
+    "monthly": 204.2,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 204.68,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "HBF Health Limited",
+     "product": "Basic Hospital Accident Only $750/$1500 Excess",
+     "tier": "Basic",
+     "monthly": 205.01,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": false
+    }
+   ],
+   "median": 451.9,
+   "byTier": {
+    "Basic": {
+     "cheapest": 204.2,
+     "fund": "ahm health insurance",
+     "median": 245.31,
+     "n": 35
+    },
+    "BasicPlus": {
+     "cheapest": 225.0,
+     "fund": "GMHBA Limited",
+     "median": 290.83,
+     "n": 101
+    },
+    "Bronze": {
+     "cheapest": 265.6,
+     "fund": "ahm health insurance",
+     "median": 333.24,
+     "n": 44
+    },
+    "BronzePlus": {
+     "cheapest": 255.86,
+     "fund": "see-u by HBF",
+     "median": 361.04,
+     "n": 176
+    },
+    "Silver": {
+     "cheapest": 358.75,
+     "fund": "GMHBA Limited",
+     "median": 451.9,
+     "n": 31
+    },
+    "SilverPlus": {
+     "cheapest": 334.9,
+     "fund": "HCF",
+     "median": 575.3,
+     "n": 394
+    },
+    "Gold": {
+     "cheapest": 497.1,
+     "fund": "Mildura Health Fund",
+     "median": 909.25,
+     "n": 80
+    }
+   }
+  },
+  "QLD:single": {
+   "n": 435,
+   "funds": 22,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 102.99,
+    "excess": 750,
+    "excessPolicy": 750,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 105.5,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 106.15,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 193.75,
+   "byTier": {
+    "Basic": {
+     "cheapest": 102.99,
+     "fund": "see-u by HBF",
+     "median": 112.35,
+     "n": 22
+    },
+    "BasicPlus": {
+     "cheapest": 112.35,
+     "fund": "GMHBA Limited",
+     "median": 131.18,
+     "n": 51
+    },
+    "Bronze": {
+     "cheapest": 131.44,
+     "fund": "Latrobe Health Services",
+     "median": 145.4,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 130.15,
+     "fund": "see-u by HBF",
+     "median": 160.15,
+     "n": 89
+    },
+    "Silver": {
+     "cheapest": 173.2,
+     "fund": "GMHBA Limited",
+     "median": 199.6,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 167.05,
+     "fund": "Westfund Limited",
+     "median": 264.83,
+     "n": 195
+    },
+    "Gold": {
+     "cheapest": 248.55,
+     "fund": "Mildura Health Fund",
+     "median": 402.5,
+     "n": 39
+    }
+   }
+  },
+  "QLD:couple": {
+   "n": 434,
+   "funds": 22,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 205.98,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 211.0,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 212.3,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 384.53,
+   "byTier": {
+    "Basic": {
+     "cheapest": 205.98,
+     "fund": "see-u by HBF",
+     "median": 224.6,
+     "n": 21
+    },
+    "BasicPlus": {
+     "cheapest": 224.7,
+     "fund": "GMHBA Limited",
+     "median": 262.37,
+     "n": 51
+    },
+    "Bronze": {
+     "cheapest": 262.87,
+     "fund": "Latrobe Health Services",
+     "median": 290.8,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 260.3,
+     "fund": "see-u by HBF",
+     "median": 320.3,
+     "n": 89
+    },
+    "Silver": {
+     "cheapest": 346.4,
+     "fund": "GMHBA Limited",
+     "median": 394.95,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 334.1,
+     "fund": "Westfund Limited",
+     "median": 526.68,
+     "n": 195
+    },
+    "Gold": {
+     "cheapest": 497.1,
+     "fund": "Mildura Health Fund",
+     "median": 805.0,
+     "n": 39
+    }
+   }
+  },
+  "QLD:singleParent": {
+   "n": 720,
+   "funds": 21,
+   "cheapest": {
+    "fund": "GMHBA Limited",
+    "product": "Frank Basic Accident Boost Hospital",
+    "tier": "Basic",
+    "monthly": 158.25,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "Phoenix Health Fund Limited",
+     "product": "Basic Accident Only Hospital",
+     "tier": "Basic",
+     "monthly": 161.54,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 164.78,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 349.31,
+   "byTier": {
+    "Basic": {
+     "cheapest": 158.25,
+     "fund": "GMHBA Limited",
+     "median": 198.76,
+     "n": 31
+    },
+    "BasicPlus": {
+     "cheapest": 168.5,
+     "fund": "GMHBA Limited",
+     "median": 226.92,
+     "n": 77
+    },
+    "Bronze": {
+     "cheapest": 197.16,
+     "fund": "Latrobe Health Services",
+     "median": 263.6,
+     "n": 42
+    },
+    "BronzePlus": {
+     "cheapest": 191.9,
+     "fund": "Medibank Private Limited",
+     "median": 275.95,
+     "n": 147
+    },
+    "Silver": {
+     "cheapest": 277.0,
+     "fund": "GMHBA Limited",
+     "median": 345.1,
+     "n": 21
+    },
+    "SilverPlus": {
+     "cheapest": 251.73,
+     "fund": "Latrobe Health Services",
+     "median": 451.79,
+     "n": 329
+    },
+    "Gold": {
+     "cheapest": 397.65,
+     "fund": "Mildura Health Fund",
+     "median": 718.2,
+     "n": 73
+    }
+   }
+  },
+  "QLD:family": {
+   "n": 821,
+   "funds": 22,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 205.98,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 211.0,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 212.3,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 448.22,
+   "byTier": {
+    "Basic": {
+     "cheapest": 205.98,
+     "fund": "see-u by HBF",
+     "median": 244.29,
+     "n": 33
+    },
+    "BasicPlus": {
+     "cheapest": 224.7,
+     "fund": "GMHBA Limited",
+     "median": 303.0,
+     "n": 93
+    },
+    "Bronze": {
+     "cheapest": 262.87,
+     "fund": "Latrobe Health Services",
+     "median": 334.9,
+     "n": 44
+    },
+    "BronzePlus": {
+     "cheapest": 260.3,
+     "fund": "see-u by HBF",
+     "median": 365.02,
+     "n": 166
+    },
+    "Silver": {
+     "cheapest": 346.4,
+     "fund": "GMHBA Limited",
+     "median": 439.34,
+     "n": 31
+    },
+    "SilverPlus": {
+     "cheapest": 335.63,
+     "fund": "Latrobe Health Services",
+     "median": 571.37,
+     "n": 378
+    },
+    "Gold": {
+     "cheapest": 497.1,
+     "fund": "Mildura Health Fund",
+     "median": 883.5,
+     "n": 76
+    }
+   }
+  },
+  "SA:single": {
+   "n": 455,
+   "funds": 22,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 98.81,
+    "excess": 750,
+    "excessPolicy": 750,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 99.5,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 102.0,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    }
+   ],
+   "median": 187.46,
+   "byTier": {
+    "Basic": {
+     "cheapest": 98.81,
+     "fund": "see-u by HBF",
+     "median": 108.95,
+     "n": 23
+    },
+    "BasicPlus": {
+     "cheapest": 107.15,
+     "fund": "HCi",
+     "median": 121.5,
+     "n": 55
+    },
+    "Bronze": {
+     "cheapest": 123.8,
+     "fund": "ahm health insurance",
+     "median": 139.05,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 122.36,
+     "fund": "see-u by HBF",
+     "median": 153.58,
+     "n": 94
+    },
+    "Silver": {
+     "cheapest": 171.5,
+     "fund": "GMHBA Limited",
+     "median": 189.12,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 159.25,
+     "fund": "ahm health insurance",
+     "median": 236.4,
+     "n": 203
+    },
+    "Gold": {
+     "cheapest": 243.4,
+     "fund": "Medibank Private Limited",
+     "median": 357.65,
+     "n": 41
+    }
+   }
+  },
+  "SA:couple": {
+   "n": 454,
+   "funds": 22,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 197.62,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 199.0,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 204.0,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 373.21,
+   "byTier": {
+    "Basic": {
+     "cheapest": 197.62,
+     "fund": "see-u by HBF",
+     "median": 217.6,
+     "n": 22
+    },
+    "BasicPlus": {
+     "cheapest": 214.3,
+     "fund": "HCi",
+     "median": 243.0,
+     "n": 55
+    },
+    "Bronze": {
+     "cheapest": 247.6,
+     "fund": "ahm health insurance",
+     "median": 278.1,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 244.72,
+     "fund": "see-u by HBF",
+     "median": 307.15,
+     "n": 94
+    },
+    "Silver": {
+     "cheapest": 333.68,
+     "fund": "AIA Health Insurance Pty Ltd",
+     "median": 376.5,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 318.27,
+     "fund": "AIA Health Insurance Pty Ltd",
+     "median": 468.0,
+     "n": 203
+    },
+    "Gold": {
+     "cheapest": 486.8,
+     "fund": "Medibank Private Limited",
+     "median": 700.9,
+     "n": 41
+    }
+   }
+  },
+  "SA:singleParent": {
+   "n": 760,
+   "funds": 21,
+   "cheapest": {
+    "fund": "GMHBA Limited",
+    "product": "Frank Basic Accident Boost Hospital",
+    "tier": "Basic",
+    "monthly": 153.0,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "Phoenix Health Fund Limited",
+     "product": "Basic Accident Only Hospital",
+     "tier": "Basic",
+     "monthly": 156.83,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 158.1,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 335.08,
+   "byTier": {
+    "Basic": {
+     "cheapest": 153.0,
+     "fund": "GMHBA Limited",
+     "median": 193.45,
+     "n": 33
+    },
+    "BasicPlus": {
+     "cheapest": 167.15,
+     "fund": "GMHBA Limited",
+     "median": 213.8,
+     "n": 85
+    },
+    "Bronze": {
+     "cheapest": 187.95,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 255.66,
+     "n": 42
+    },
+    "BronzePlus": {
+     "cheapest": 186.1,
+     "fund": "Medibank Private Limited",
+     "median": 262.91,
+     "n": 157
+    },
+    "Silver": {
+     "cheapest": 274.35,
+     "fund": "GMHBA Limited",
+     "median": 332.5,
+     "n": 21
+    },
+    "SilverPlus": {
+     "cheapest": 253.38,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 407.33,
+     "n": 345
+    },
+    "Gold": {
+     "cheapest": 397.65,
+     "fund": "Mildura Health Fund",
+     "median": 629.65,
+     "n": 77
+    }
+   }
+  },
+  "SA:family": {
+   "n": 861,
+   "funds": 22,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 197.62,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 199.0,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 204.0,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 429.5,
+   "byTier": {
+    "Basic": {
+     "cheapest": 197.62,
+     "fund": "see-u by HBF",
+     "median": 232.44,
+     "n": 35
+    },
+    "BasicPlus": {
+     "cheapest": 222.9,
+     "fund": "GMHBA Limited",
+     "median": 285.5,
+     "n": 101
+    },
+    "Bronze": {
+     "cheapest": 247.6,
+     "fund": "ahm health insurance",
+     "median": 319.17,
+     "n": 44
+    },
+    "BronzePlus": {
+     "cheapest": 244.72,
+     "fund": "see-u by HBF",
+     "median": 345.1,
+     "n": 176
+    },
+    "Silver": {
+     "cheapest": 343.0,
+     "fund": "GMHBA Limited",
+     "median": 426.54,
+     "n": 31
+    },
+    "SilverPlus": {
+     "cheapest": 318.5,
+     "fund": "ahm health insurance",
+     "median": 522.08,
+     "n": 394
+    },
+    "Gold": {
+     "cheapest": 486.8,
+     "fund": "Medibank Private Limited",
+     "median": 769.29,
+     "n": 80
+    }
+   }
+  },
+  "WA:single": {
+   "n": 455,
+   "funds": 22,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 78.86,
+    "excess": 750,
+    "excessPolicy": 750,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "HBF Health Limited",
+     "product": "Basic Hospital Accident Only $750/$1500 Excess",
+     "tier": "Basic",
+     "monthly": 79.13,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": false
+    },
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 79.6,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 158.9,
+   "byTier": {
+    "Basic": {
+     "cheapest": 78.86,
+     "fund": "see-u by HBF",
+     "median": 85.75,
+     "n": 23
+    },
+    "BasicPlus": {
+     "cheapest": 83.81,
+     "fund": "HCi",
+     "median": 98.0,
+     "n": 55
+    },
+    "Bronze": {
+     "cheapest": 94.7,
+     "fund": "ahm health insurance",
+     "median": 108.11,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 94.1,
+     "fund": "see-u by HBF",
+     "median": 121.5,
+     "n": 94
+    },
+    "Silver": {
+     "cheapest": 145.53,
+     "fund": "AIA Health Insurance Pty Ltd",
+     "median": 163.81,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 131.28,
+     "fund": "HCF",
+     "median": 215.3,
+     "n": 203
+    },
+    "Gold": {
+     "cheapest": 214.05,
+     "fund": "Medibank Private Limited",
+     "median": 334.5,
+     "n": 41
+    }
+   }
+  },
+  "WA:couple": {
+   "n": 454,
+   "funds": 22,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 157.72,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "HBF Health Limited",
+     "product": "Basic Hospital Accident Only $750/$1500 Excess",
+     "tier": "Basic",
+     "monthly": 158.25,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": false
+    },
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 159.2,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 317.24,
+   "byTier": {
+    "Basic": {
+     "cheapest": 157.72,
+     "fund": "see-u by HBF",
+     "median": 171.38,
+     "n": 22
+    },
+    "BasicPlus": {
+     "cheapest": 167.62,
+     "fund": "HCi",
+     "median": 196.0,
+     "n": 55
+    },
+    "Bronze": {
+     "cheapest": 189.4,
+     "fund": "ahm health insurance",
+     "median": 216.22,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 188.2,
+     "fund": "see-u by HBF",
+     "median": 242.99,
+     "n": 94
+    },
+    "Silver": {
+     "cheapest": 276.51,
+     "fund": "AIA Health Insurance Pty Ltd",
+     "median": 319.3,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 262.56,
+     "fund": "HCF",
+     "median": 423.64,
+     "n": 203
+    },
+    "Gold": {
+     "cheapest": 428.1,
+     "fund": "Medibank Private Limited",
+     "median": 669.0,
+     "n": 41
+    }
+   }
+  },
+  "WA:singleParent": {
+   "n": 760,
+   "funds": 21,
+   "cheapest": {
+    "fund": "GMHBA Limited",
+    "product": "Frank Basic Accident Boost Hospital",
+    "tier": "Basic",
+    "monthly": 119.95,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "Phoenix Health Fund Limited",
+     "product": "Basic Accident Only Hospital",
+     "tier": "Basic",
+     "monthly": 125.46,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 126.18,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 285.84,
+   "byTier": {
+    "Basic": {
+     "cheapest": 119.95,
+     "fund": "GMHBA Limited",
+     "median": 152.27,
+     "n": 33
+    },
+    "BasicPlus": {
+     "cheapest": 132.2,
+     "fund": "GMHBA Limited",
+     "median": 173.2,
+     "n": 85
+    },
+    "Bronze": {
+     "cheapest": 146.33,
+     "fund": "Latrobe Health Services",
+     "median": 189.55,
+     "n": 42
+    },
+    "BronzePlus": {
+     "cheapest": 139.9,
+     "fund": "Medibank Private Limited",
+     "median": 210.1,
+     "n": 157
+    },
+    "Silver": {
+     "cheapest": 234.35,
+     "fund": "GMHBA Limited",
+     "median": 279.97,
+     "n": 21
+    },
+    "SilverPlus": {
+     "cheapest": 203.13,
+     "fund": "RT Health - a division of The Hospitals Contribution Fund",
+     "median": 370.21,
+     "n": 345
+    },
+    "Gold": {
+     "cheapest": 353.2,
+     "fund": "Medibank Private Limited",
+     "median": 597.7,
+     "n": 77
+    }
+   }
+  },
+  "WA:family": {
+   "n": 861,
+   "funds": 22,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 157.72,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "HBF Health Limited",
+     "product": "Basic Hospital Accident Only $750/$1500 Excess",
+     "tier": "Basic",
+     "monthly": 158.25,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": false
+    },
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 159.2,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 365.85,
+   "byTier": {
+    "Basic": {
+     "cheapest": 157.72,
+     "fund": "see-u by HBF",
+     "median": 185.19,
+     "n": 35
+    },
+    "BasicPlus": {
+     "cheapest": 173.4,
+     "fund": "HCF",
+     "median": 235.82,
+     "n": 101
+    },
+    "Bronze": {
+     "cheapest": 189.4,
+     "fund": "ahm health insurance",
+     "median": 242.57,
+     "n": 44
+    },
+    "BronzePlus": {
+     "cheapest": 188.2,
+     "fund": "see-u by HBF",
+     "median": 274.61,
+     "n": 176
+    },
+    "Silver": {
+     "cheapest": 293.05,
+     "fund": "GMHBA Limited",
+     "median": 363.83,
+     "n": 31
+    },
+    "SilverPlus": {
+     "cheapest": 262.56,
+     "fund": "HCF",
+     "median": 472.75,
+     "n": 394
+    },
+    "Gold": {
+     "cheapest": 428.1,
+     "fund": "Medibank Private Limited",
+     "median": 718.51,
+     "n": 80
+    }
+   }
+  },
+  "TAS:single": {
+   "n": 446,
+   "funds": 22,
+   "cheapest": {
+    "fund": "HBF Health Limited",
+    "product": "Basic Hospital Accident Only $750/$1500 Excess",
+    "tier": "Basic",
+    "monthly": 100.42,
+    "excess": 750,
+    "excessPolicy": 750,
+    "ageDiscount": false
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 103.39,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 104.95,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    }
+   ],
+   "median": 191.45,
+   "byTier": {
+    "Basic": {
+     "cheapest": 100.42,
+     "fund": "HBF Health Limited",
+     "median": 113.17,
+     "n": 22
+    },
+    "BasicPlus": {
+     "cheapest": 110.8,
+     "fund": "GMHBA Limited",
+     "median": 125.77,
+     "n": 52
+    },
+    "Bronze": {
+     "cheapest": 123.91,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 146.6,
+     "n": 26
+    },
+    "BronzePlus": {
+     "cheapest": 121.79,
+     "fund": "see-u by HBF",
+     "median": 154.15,
+     "n": 90
+    },
+    "Silver": {
+     "cheapest": 167.95,
+     "fund": "GMHBA Limited",
+     "median": 205.06,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 161.08,
+     "fund": "HCF",
+     "median": 252.69,
+     "n": 201
+    },
+    "Gold": {
+     "cheapest": 246.4,
+     "fund": "St Lukes",
+     "median": 372.5,
+     "n": 39
+    }
+   }
+  },
+  "TAS:couple": {
+   "n": 445,
+   "funds": 22,
+   "cheapest": {
+    "fund": "HBF Health Limited",
+    "product": "Basic Hospital Accident Only $750/$1500 Excess",
+    "tier": "Basic",
+    "monthly": 200.84,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": false
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 206.78,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 209.9,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 382.2,
+   "byTier": {
+    "Basic": {
+     "cheapest": 200.84,
+     "fund": "HBF Health Limited",
+     "median": 224.0,
+     "n": 21
+    },
+    "BasicPlus": {
+     "cheapest": 221.6,
+     "fund": "GMHBA Limited",
+     "median": 251.54,
+     "n": 52
+    },
+    "Bronze": {
+     "cheapest": 247.82,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 292.23,
+     "n": 26
+    },
+    "BronzePlus": {
+     "cheapest": 243.58,
+     "fund": "see-u by HBF",
+     "median": 308.3,
+     "n": 90
+    },
+    "Silver": {
+     "cheapest": 335.9,
+     "fund": "GMHBA Limited",
+     "median": 402.64,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 322.16,
+     "fund": "HCF",
+     "median": 504.0,
+     "n": 201
+    },
+    "Gold": {
+     "cheapest": 492.8,
+     "fund": "St Lukes",
+     "median": 732.46,
+     "n": 39
+    }
+   }
+  },
+  "TAS:singleParent": {
+   "n": 731,
+   "funds": 21,
+   "cheapest": {
+    "fund": "GMHBA Limited",
+    "product": "Frank Basic Accident Boost Hospital",
+    "tier": "Basic",
+    "monthly": 157.45,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "HBF Health Limited",
+     "product": "Basic Hospital Accident Only $750/$1500 Excess",
+     "tier": "Basic",
+     "monthly": 160.64,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": false
+    },
+    {
+     "fund": "Phoenix Health Fund Limited",
+     "product": "Basic Accident Only Hospital",
+     "tier": "Basic",
+     "monthly": 161.54,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    }
+   ],
+   "median": 345.72,
+   "byTier": {
+    "Basic": {
+     "cheapest": 157.45,
+     "fund": "GMHBA Limited",
+     "median": 197.07,
+     "n": 31
+    },
+    "BasicPlus": {
+     "cheapest": 166.2,
+     "fund": "GMHBA Limited",
+     "median": 217.03,
+     "n": 78
+    },
+    "Bronze": {
+     "cheapest": 185.87,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 257.75,
+     "n": 45
+    },
+    "BronzePlus": {
+     "cheapest": 188.33,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 266.56,
+     "n": 148
+    },
+    "Silver": {
+     "cheapest": 268.6,
+     "fund": "GMHBA Limited",
+     "median": 349.98,
+     "n": 21
+    },
+    "SilverPlus": {
+     "cheapest": 253.38,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 432.9,
+     "n": 335
+    },
+    "Gold": {
+     "cheapest": 397.65,
+     "fund": "Mildura Health Fund",
+     "median": 661.1,
+     "n": 73
+    }
+   }
+  },
+  "TAS:family": {
+   "n": 832,
+   "funds": 22,
+   "cheapest": {
+    "fund": "HBF Health Limited",
+    "product": "Basic Hospital Accident Only $750/$1500 Excess",
+    "tier": "Basic",
+    "monthly": 200.84,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": false
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 206.78,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "GMHBA Limited",
+     "product": "Frank Basic Accident Boost Hospital",
+     "tier": "Basic",
+     "monthly": 209.9,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 436.47,
+   "byTier": {
+    "Basic": {
+     "cheapest": 200.84,
+     "fund": "HBF Health Limited",
+     "median": 239.76,
+     "n": 33
+    },
+    "BasicPlus": {
+     "cheapest": 221.6,
+     "fund": "GMHBA Limited",
+     "median": 291.97,
+     "n": 94
+    },
+    "Bronze": {
+     "cheapest": 247.82,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 325.42,
+     "n": 47
+    },
+    "BronzePlus": {
+     "cheapest": 243.58,
+     "fund": "see-u by HBF",
+     "median": 347.34,
+     "n": 167
+    },
+    "Silver": {
+     "cheapest": 335.9,
+     "fund": "GMHBA Limited",
+     "median": 441.56,
+     "n": 31
+    },
+    "SilverPlus": {
+     "cheapest": 322.16,
+     "fund": "HCF",
+     "median": 545.59,
+     "n": 384
+    },
+    "Gold": {
+     "cheapest": 492.8,
+     "fund": "St Lukes",
+     "median": 814.65,
+     "n": 76
+    }
+   }
+  },
+  "NT:single": {
+   "n": 448,
+   "funds": 21,
+   "cheapest": {
+    "fund": "ahm health insurance",
+    "product": "ambulance hospital (basic)",
+    "tier": "Basic",
+    "monthly": 39.3,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 40.0,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": true
+    },
+    {
+     "fund": "HCF",
+     "product": "HCF Reciprocal Health Cover Basic",
+     "tier": "Basic",
+     "monthly": 40.95,
+     "excess": 750,
+     "excessPolicy": 750,
+     "ageDiscount": false
+    }
+   ],
+   "median": 108.15,
+   "byTier": {
+    "Basic": {
+     "cheapest": 39.3,
+     "fund": "ahm health insurance",
+     "median": 54.8,
+     "n": 23
+    },
+    "BasicPlus": {
+     "cheapest": 51.17,
+     "fund": "HCF",
+     "median": 65.41,
+     "n": 54
+    },
+    "Bronze": {
+     "cheapest": 63.1,
+     "fund": "ahm health insurance",
+     "median": 74.4,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 59.0,
+     "fund": "see-u by HBF",
+     "median": 86.0,
+     "n": 93
+    },
+    "Silver": {
+     "cheapest": 94.3,
+     "fund": "GMHBA Limited",
+     "median": 102.89,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 69.45,
+     "fund": "HCF",
+     "median": 149.99,
+     "n": 198
+    },
+    "Gold": {
+     "cheapest": 129.9,
+     "fund": "Medibank Private Limited",
+     "median": 224.6,
+     "n": 41
+    }
+   }
+  },
+  "NT:couple": {
+   "n": 447,
+   "funds": 21,
+   "cheapest": {
+    "fund": "ahm health insurance",
+    "product": "ambulance hospital (basic)",
+    "tier": "Basic",
+    "monthly": 78.6,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 80.0,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "HCF",
+     "product": "HCF Reciprocal Health Cover Basic",
+     "tier": "Basic",
+     "monthly": 81.9,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": false
+    }
+   ],
+   "median": 214.67,
+   "byTier": {
+    "Basic": {
+     "cheapest": 78.6,
+     "fund": "ahm health insurance",
+     "median": 109.0,
+     "n": 22
+    },
+    "BasicPlus": {
+     "cheapest": 102.34,
+     "fund": "HCF",
+     "median": 130.81,
+     "n": 54
+    },
+    "Bronze": {
+     "cheapest": 126.2,
+     "fund": "ahm health insurance",
+     "median": 148.8,
+     "n": 23
+    },
+    "BronzePlus": {
+     "cheapest": 118.0,
+     "fund": "see-u by HBF",
+     "median": 172.0,
+     "n": 93
+    },
+    "Silver": {
+     "cheapest": 188.6,
+     "fund": "GMHBA Limited",
+     "median": 202.82,
+     "n": 16
+    },
+    "SilverPlus": {
+     "cheapest": 138.9,
+     "fund": "HCF",
+     "median": 299.98,
+     "n": 198
+    },
+    "Gold": {
+     "cheapest": 259.8,
+     "fund": "Medibank Private Limited",
+     "median": 435.14,
+     "n": 41
+    }
+   }
+  },
+  "NT:singleParent": {
+   "n": 746,
+   "funds": 20,
+   "cheapest": {
+    "fund": "see-u by HBF",
+    "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+    "tier": "Basic",
+    "monthly": 64.0,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess (Basic)",
+     "tier": "Basic",
+     "monthly": 67.5,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "ahm health insurance",
+     "product": "ambulance hospital (basic)",
+     "tier": "Basic",
+     "monthly": 68.1,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    }
+   ],
+   "median": 193.29,
+   "byTier": {
+    "Basic": {
+     "cheapest": 64.0,
+     "fund": "see-u by HBF",
+     "median": 94.56,
+     "n": 33
+    },
+    "BasicPlus": {
+     "cheapest": 81.87,
+     "fund": "HCF",
+     "median": 113.24,
+     "n": 85
+    },
+    "Bronze": {
+     "cheapest": 100.73,
+     "fund": "Phoenix Health Fund Limited",
+     "median": 145.34,
+     "n": 42
+    },
+    "BronzePlus": {
+     "cheapest": 93.5,
+     "fund": "Medibank Private Limited",
+     "median": 147.62,
+     "n": 155
+    },
+    "Silver": {
+     "cheapest": 150.85,
+     "fund": "GMHBA Limited",
+     "median": 183.67,
+     "n": 21
+    },
+    "SilverPlus": {
+     "cheapest": 111.12,
+     "fund": "HCF",
+     "median": 258.5,
+     "n": 333
+    },
+    "Gold": {
+     "cheapest": 231.1,
+     "fund": "Medibank Private Limited",
+     "median": 397.65,
+     "n": 77
+    }
+   }
+  },
+  "NT:family": {
+   "n": 847,
+   "funds": 21,
+   "cheapest": {
+    "fund": "ahm health insurance",
+    "product": "ambulance hospital (basic)",
+    "tier": "Basic",
+    "monthly": 78.6,
+    "excess": 750,
+    "excessPolicy": 1500,
+    "ageDiscount": true
+   },
+   "runnersUp": [
+    {
+     "fund": "see-u by HBF",
+     "product": "Starter Hospital $750 Excess with Daily Co-Pay (Basic)",
+     "tier": "Basic",
+     "monthly": 80.0,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": true
+    },
+    {
+     "fund": "HCF",
+     "product": "HCF Reciprocal Health Cover Basic",
+     "tier": "Basic",
+     "monthly": 81.9,
+     "excess": 750,
+     "excessPolicy": 1500,
+     "ageDiscount": false
+    }
+   ],
+   "median": 249.84,
+   "byTier": {
+    "Basic": {
+     "cheapest": 78.6,
+     "fund": "ahm health insurance",
+     "median": 115.39,
+     "n": 35
+    },
+    "BasicPlus": {
+     "cheapest": 102.34,
+     "fund": "HCF",
+     "median": 151.52,
+     "n": 101
+    },
+    "Bronze": {
+     "cheapest": 126.2,
+     "fund": "ahm health insurance",
+     "median": 179.91,
+     "n": 44
+    },
+    "BronzePlus": {
+     "cheapest": 118.0,
+     "fund": "see-u by HBF",
+     "median": 193.42,
+     "n": 174
+    },
+    "Silver": {
+     "cheapest": 188.6,
+     "fund": "GMHBA Limited",
+     "median": 243.8,
+     "n": 31
+    },
+    "SilverPlus": {
+     "cheapest": 138.9,
+     "fund": "HCF",
+     "median": 336.25,
+     "n": 382
+    },
+    "Gold": {
+     "cheapest": 259.8,
+     "fund": "Medibank Private Limited",
+     "median": 484.85,
+     "n": 80
+    }
+   }
+  }
+ }
+}

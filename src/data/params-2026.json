@@ -1,0 +1,93 @@
+{
+  "_readme": "Every legal figure of the site lives here (RECETTE §4, §22). Each value was read on the official page cited in `sources` on retrieved_at. Annual update: thresholds on 1 July (ATO page updated in June), rebate percentages on 1 April (Department of Health circular in February or March), premiums monthly (data.gov.au release of the 1st, scripts/data/build-premiums.py).",
+  "year": 2026,
+  "incomeYear": "2026-27",
+  "retrieved_at": "2026-10-19",
+  "valid_from": "2026-07-01",
+  "valid_to": "2027-06-30",
+  "daysInYear": 365,
+  "mls": {
+    "_note": "ATO, Medicare levy surcharge income, thresholds and rates (last updated 22 June 2026) and M2 instructions 2026. Tier boundaries are inclusive ('$105,000 or less'). The family thresholds rise by $1,500 for each MLS dependent child after the first. The rate is applied to taxable income + reportable fringe benefits + amounts on which family trust distribution tax was paid, not to the whole income for MLS purposes.",
+    "single": [105000, 123000, 164000],
+    "family": [210000, 246000, 328000],
+    "childIncrement": 1500,
+    "rates": [0, 0.01, 0.0125, 0.015],
+    "prior": { "year": "2025-26", "single": [101000, 118000, 158000], "family": [202000, 236000, 316000] },
+    "spouseOwnIncomeFloor": { "value": 28011, "year": "2025-26", "_note": "M2 instructions 2026 (last updated 30 May 2026): with a spouse for the whole year and a combined income above the family threshold, you are not liable if your own income for MLS purposes is $28,011 or less. The ATO page 'Paying the Medicare levy surcharge' (5 May 2026) still prints $27,222. No 2026-27 figure was published on 2026-10-19." },
+    "excessLimit": { "single": 750, "other": 1500 }
+  },
+  "rebate": {
+    "_note": "ATO, Income thresholds and rates for the private health insurance rebate (last updated 22 June 2026); privatehealth.gov.au rebate page; Department of Health circular PHI 12/26 (17 February 2026): RAF 2026 = 0.993, industry weighted average premium increase 4.41 %. Rows: under 65, 65 to 69, 70 and over (age of the oldest person on the policy). Columns: base tier, tier 1, tier 2, tier 3. The income tiers are those of the MLS.",
+    "periods": [
+      { "from": "2025-07-01", "to": "2026-03-31", "rates": [[0.24288, 0.16192, 0.08095, 0], [0.28337, 0.20240, 0.12143, 0], [0.32385, 0.24288, 0.16192, 0]] },
+      { "from": "2026-04-01", "to": "2027-03-31", "rates": [[0.24118, 0.16079, 0.08038, 0], [0.28139, 0.20098, 0.12058, 0], [0.32158, 0.24118, 0.16079, 0]] }
+    ],
+    "current": 1,
+    "raf2026": 0.993,
+    "premiumRise2026": 0.0441,
+    "nextAdjustment": "2027-04-01",
+    "nextRatesPublished": "March 2027",
+    "proposal2027": {
+      "_note": "Department of Health, 'Modernising the Private Health Insurance Rebate' (July 2026): from 1 April 2027 the 65-69 and 70+ rows would take the under-65 rates, subject to legislation passing Parliament; RAF set to 1 for 1 April 2027. Bill: Private Health Insurance Amendment (Modernising the Private Health Insurance Rebate) Bill 2026 [No. 2], introduced in the House of Representatives on 15 October 2026, status 'Before House of Representatives' on aph.gov.au, read 2026-10-19. Not law.",
+      "from": "2027-04-01",
+      "rates": [[0.24118, 0.16079, 0.08038, 0], [0.24118, 0.16079, 0.08038, 0], [0.24118, 0.16079, 0.08038, 0]],
+      "raf": 1,
+      "deptAverageCost": 252,
+      "billIntroduced": "2026-10-15",
+      "billStatus": "Before the House of Representatives"
+    }
+  },
+  "lhc": {
+    "_note": "privatehealth.gov.au, Lifetime Health Cover; ATO, Lifetime health cover loading (5 May 2026). Loading = 2 % for every year over 30, based on age on the 1 July before joining; maximum 70 %; removed after 10 years of continuous hospital cover; 1094 days of absence allowed in a lifetime; overseas visits of up to 90 consecutive days keep you overseas; born on or before 1 July 1934 exempt; couple policy: average of the two adults; no rebate on the loading.",
+    "perYear": 0.02,
+    "freeUntilAge": 30,
+    "baseAge": 31,
+    "max": 0.7,
+    "removedAfterYears": 10,
+    "daysOfAbsence": 1094,
+    "overseasVisitDays": 90,
+    "exemptBornOnOrBefore": "1934-07-01",
+    "migrantWindowMonths": 12
+  },
+  "ageDiscount": {
+    "_note": "privatehealth.gov.au, Age-based discount: insurers may offer 2 % per year under 30, up to 10 % for 18 to 25, kept until 41, then reduced by 2 % a year. Optional for the insurer.",
+    "byAge": { "25": 0.10, "26": 0.08, "27": 0.06, "28": 0.04, "29": 0.02, "30": 0 },
+    "max": 0.10,
+    "phaseOutFrom": 41,
+    "phaseOutPerYear": 0.02
+  },
+  "medicareLevy": {
+    "_note": "privatehealth.gov.au MLS page: the surcharge is in addition to the Medicare levy of 2 %. ATO Medicare levy reduction (30 June 2026): 2025-26 single low-income thresholds $28,011 and $35,013 (SAPTO $44,268 and $55,335).",
+    "rate": 0.02,
+    "lowIncome2025": { "lower": 28011, "upper": 35013, "saptoLower": 44268, "saptoUpper": 55335 }
+  },
+  "dependants": {
+    "_note": "ATO, Family and dependants for MLS purposes (21 August 2026): a child is an MLS dependant under 21, or 21 to 24 and studying full time; spouse married or de facto; a foster child is not included; the private health insurance dependant age (up to 31 under the 2021 rules) is a separate notion.",
+    "childUnder": 21,
+    "studentUnder": 25,
+    "policyDependantMaxAge": 31
+  },
+  "sources": {
+    "ato_mls_rates": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates", "label": { "en": "ATO, Medicare levy surcharge income, thresholds and rates (updated 22 June 2026)" } },
+    "ato_mls_paying": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/paying-the-medicare-levy-surcharge", "label": { "en": "ATO, Paying the Medicare levy surcharge" } },
+    "ato_mls_cover": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/paying-the-medicare-levy-surcharge/appropriate-level-of-private-patient-hospital-cover", "label": { "en": "ATO, Appropriate level of private patient hospital cover" } },
+    "ato_mls_family": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/family-and-dependants-for-medicare-levy-surcharge-purposes", "label": { "en": "ATO, Family and dependants for Medicare levy surcharge purposes" } },
+    "ato_m2": { "url": "https://www.ato.gov.au/forms-and-instructions/individual-tax-return-2026-instructions/medicare-levy-questions-m1-m2-individual-tax-return-2026/m2-medicare-levy-surcharge-2026", "label": { "en": "ATO, M2 Medicare levy surcharge 2026 (tax return instructions)" } },
+    "ato_rebate_rates": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/private-health-insurance-rebate/income-thresholds-and-rates-for-the-private-health-insurance-rebate", "label": { "en": "ATO, Income thresholds and rates for the private health insurance rebate (updated 22 June 2026)" } },
+    "ato_rebate_eligibility": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/private-health-insurance-rebate/private-health-insurance-rebate-eligibility", "label": { "en": "ATO, Private health insurance rebate eligibility" } },
+    "ato_lhc": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/private-health-insurance-rebate/lifetime-health-cover", "label": { "en": "ATO, Lifetime health cover loading" } },
+    "ato_overseas": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/private-health-insurance-rebate/overseas-visitors-private-health-insurance-on-your-tax-return", "label": { "en": "ATO, Overseas visitors: private health insurance on your tax return" } },
+    "ato_not_entitled": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-exemption/not-entitled-to-medicare-benefits", "label": { "en": "ATO, Medicare levy exemption: not entitled to Medicare benefits" } },
+    "ato_foreign_res": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-exemption/foreign-residents-exemption-from-medicare-levy", "label": { "en": "ATO, Foreign residents exemption from the Medicare levy" } },
+    "ato_ml_reduction": { "url": "https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-for-low-income-earners", "label": { "en": "ATO, Medicare levy reduction for low-income earners" } },
+    "phio_lhc": { "url": "https://www.privatehealth.gov.au/health_insurance/surcharges_incentives/lifetime_health_cover.htm", "label": { "en": "PrivateHealth.gov.au (Ombudsman), Lifetime Health Cover" } },
+    "phio_mls": { "url": "https://www.privatehealth.gov.au/health_insurance/surcharges_incentives/medicare_levy.htm", "label": { "en": "PrivateHealth.gov.au (Ombudsman), Medicare Levy Surcharge" } },
+    "phio_rebate": { "url": "https://www.privatehealth.gov.au/health_insurance/surcharges_incentives/insurance_rebate.htm", "label": { "en": "PrivateHealth.gov.au (Ombudsman), Private Health Insurance Rebate" } },
+    "phio_age": { "url": "https://www.privatehealth.gov.au/health_insurance/surcharges_incentives/discount_age.htm", "label": { "en": "PrivateHealth.gov.au (Ombudsman), Age-based discount" } },
+    "phio_changes": { "url": "https://www.privatehealth.gov.au/health_insurance/phichanges/index.htm", "label": { "en": "PrivateHealth.gov.au (Ombudsman), Private health insurance changes (tiers, excess, dependants)" } },
+    "datagov_phi": { "url": "https://data.gov.au/data/dataset/private-health-insurance", "label": { "en": "data.gov.au, PrivateHealth.gov.au product data, October 2026 release (CC BY 3.0 AU)" } },
+    "health_raf_2026": { "url": "https://www.health.gov.au/news/phi-circulars/phi-1226-private-health-insurance-rebate-adjustment-factor-effective-1-april-2026", "label": { "en": "Department of Health, PHI 12/26 rebate adjustment factor effective 1 April 2026" } },
+    "health_rebate_2027": { "url": "https://www.health.gov.au/sites/default/files/2026-07/phi-rebate-changes-modernising-the-private-health-insurance-rebate.docx", "label": { "en": "Department of Health, Modernising the Private Health Insurance Rebate (July 2026)" } },
+    "aph_bill_2027": { "url": "https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7564", "label": { "en": "Parliament of Australia, Modernising the Private Health Insurance Rebate Bill 2026 [No. 2]" } }
+  }
+}

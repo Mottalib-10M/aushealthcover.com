@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema } from '../../lib/seo';
+const lang = 'en';
+const code = `<iframe src="${SITE_URL}/embed/mls-calculator/" title="Medicare levy surcharge or hospital cover, 2026-27" width="100%" height="980" style="border:0;max-width:900px" loading="lazy"></iframe>`;
+---
+<PageLayout title="Embed the 2026-27 Medicare levy surcharge calculator" description="Blogs, forums and employer intranets can embed the 2026-27 surcharge or cover calculator with one iframe line. Free, no cookie, no tracking, updated with each policy file." lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Embed the calculator', path: route('widget', lang) }])]} breadcrumbs={[{ label: 'Embed the calculator' }]} showAuthor={false}>
+  <header class="mb-6">
+    <h1 class="font-serif text-3xl font-bold text-navy-900 md:text-4xl">Embed the calculator</h1>
+    <p class="mt-3 text-lg text-navy-700">One line of code. When the thresholds, the rebate or the premiums change, the embedded calculator follows.</p>
+  </header>
+  <div class="prose prose-slate max-w-none">
+    <h2>Surcharge or cheapest hospital cover</h2>
+    <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{code}</code></pre>
+    <p>The calculator runs in the visitor's browser and sends nothing to us or to you. Please keep the link under it: it is how readers find the sources and the method. You may not place it next to a quote form or present it as advice from your organisation.</p>
+  </div>
+  <div class="mt-8 overflow-hidden rounded-xl border border-navy-200">
+    <iframe src="/embed/mls-calculator/" title="Medicare levy surcharge or hospital cover, 2026-27" width="100%" height="980" style="border:0" loading="lazy"></iframe>
+  </div>
+</PageLayout>

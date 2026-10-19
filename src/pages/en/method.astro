@@ -1,0 +1,46 @@
+---
+/** Method: data, formulas, checks and limits. Every figure from the kit. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { src, table } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+const lang = 'en';
+const path = route('method', lang);
+const P = K.P, M = P.mls, PR = K.PREM;
+const title = 'Medicare Levy Surcharge Method 2026-27: Rules, Data, Tests';
+const description = 'How the 2026-27 surcharge, rebate and loading figures are built: ATO thresholds, PrivateHealth.gov.au policy file filters, the formulas and the tests we run.';
+const ex = K.cmp({ status: 'single', you: { mlsIncome: 130000 }, region: 'NSW', oldest: 35, loading: 0 });
+const sk = PR.skipped as Record<string, number>;
+const reb = P.rebate.periods[P.rebate.current].rates;
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'How the figures are built', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'How the figures are built', path }])]} breadcrumbs={[{ label: 'How the figures are built' }]}>
+  <article class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h1>How the figures are built</h1>
+    <p>Every calculator on this site runs in your browser on one engine and two data files: a parameter file that holds each threshold, rate and rule with the official page it comes from and the date it was read ({K.day(P.retrieved_at)} for this edition), and a premium file built from the PrivateHealth.gov.au product data. Nothing you type leaves your browser. This page lists the data, the formulas, the checks and what is deliberately left out.</p>
+
+    <h2>The surcharge</h2>
+    <p>Thresholds and rates for {P.incomeYear} come from <Fragment set:html={src('ato_mls_rates')} />. The tier is set by income for MLS purposes: taxable income, reportable fringe benefits, reportable super contributions and net investment losses, combined with your spouse's for a couple or a family. Family thresholds rise by {K.usd(M.childIncrement)} for each MLS dependent child after the first. The rate of the tier is charged on taxable income and reportable fringe benefits (amounts taxed as family trust distributions are not modelled), times the number of days without cover over {P.daysInYear}. For a couple each partner pays on their own base; a partner whose own income for MLS purposes is {K.usd(M.spouseOwnIncomeFloor.value)} or less is not liable (the {M.spouseOwnIncomeFloor.year} figure of the M2 instructions, since no {P.incomeYear} figure has been published).</p>
+    <Fragment set:html={table(['Tier', 'Single', 'Family', 'Rate'], [0, 1, 2, 3].map((t) => [K.TN[t], t < 3 ? `up to ${K.usd(K.thr('single')[t])}` : `over ${K.usd(K.thr('single')[2])}`, t < 3 ? `up to ${K.usd(K.thr('family', 1)[t])}` : `over ${K.usd(K.thr('family', 1)[2])}`, K.pct(K.rate(t as 0 | 1 | 2 | 3), 2)]), `${P.incomeYear} thresholds, inclusive. ${P.mls.prior.year}: ${K.usd(M.prior.single[0])} single and ${K.usd(M.prior.family[0])} family.`, ['l', 'r', 'r', 'r'])} />
+
+    <h2>The rebate</h2>
+    <p>Percentages come from <Fragment set:html={src('ato_rebate_rates')} /> and apply from 1 April 2026 to 31 March 2027; the rates of 1 July 2025 to 31 March 2026 are kept for the cases that need them. The age band is that of the oldest person on the policy. The rebate is applied to the base premium only, never to the Lifetime Health Cover loading. The rate of 1 April 2027 is not known: the Department of Health publishes it in March, with the rebate adjustment factor ({K.dec(P.rebate.raf2026, 3)} for 2026, <Fragment set:html={src('health_raf_2026', 'circular PHI 12/26')} />). The proposal to give people aged 65 and over the under-65 rates from 1 April 2027 is shown as a scenario only.</p>
+    <Fragment set:html={table(['Oldest person on the policy', 'Base tier', 'Tier 1', 'Tier 2', 'Tier 3'], K.AB.map((a, i) => [a, ...reb[i].map((r) => K.pct(r, 3))]), 'Rebate from 1 April 2026.', ['l', 'r', 'r', 'r', 'r'])} />
+
+    <h2>The Lifetime Health Cover loading</h2>
+    <p>{K.pct(P.lhc.perYear, 0)} for each year over 30 on the 1 July before joining, at most {K.pct(P.lhc.max, 0)}, removed after {P.lhc.removedAfterYears} continuous years, averaged across the adults of a couple or family policy, with a lifetime allowance of {K.num(P.lhc.daysOfAbsence)} days of absence (<Fragment set:html={src('phio_lhc')} />). Every worked example of that page is a test of our engine: Lukas and Noor give {K.pct(K.avgLoad([K.lhc(41), 0]), 0)}, Shona {K.pct(K.lhc(39), 0)}, Sonja {K.pct(K.lhc(36), 0)}, Lucy's family policy {K.pct(K.avgLoad([K.lhc(33), 0, 0]), 0)}. Past the {K.num(P.lhc.daysOfAbsence)} days, our estimate adds {K.pct(P.lhc.perYear, 0)} for the first day over the allowance and {K.pct(P.lhc.perYear, 0)} more for each further full year, which reproduces the Wei and Haruki examples; your insurer fixes the exact figure from your clearance certificate.</p>
+
+    <h2>The premiums: what we keep from the policy file</h2>
+    <p>The Private Health Insurance Ombudsman publishes the details of every policy on sale each month on <Fragment set:html={src('datagov_phi', 'data.gov.au')} />, under the Creative Commons Attribution 3.0 Australia licence. Our script reads the release of {K.day(PR.release)}: {K.num(PR.productsInFile)} product lines. It keeps hospital and combined policies open to the public whose excess avoids the surcharge ({K.usd(M.excessLimit.single)} per person and {K.usd(M.excessLimit.other)} per policy at most), and sets aside {K.num(sk['restricted fund'] ?? 0)} lines of the {PR.restrictedFunds} restricted funds, {K.num(sk['corporate product'] ?? 0)} corporate products and {K.num(sk['sold only with another product'] ?? 0)} products sold only together with another one. For each state and each type of cover (single, couple, single parent, family) it records the cheapest monthly premium before the rebate, the insurer and the policy, the median, and the cheapest by hospital tier. The file has no separate ACT list: residents of the ACT buy the NSW policies, and we show them together.</p>
+    <p>We use the full premium the file gives, before the rebate. It does not include the age-based discount some insurers give people under 30, nor promotions. Premiums change on 1 April each year; the file is rebuilt with each release.</p>
+
+    <h2>The comparison</h2>
+    <p>The surcharge you would pay without cover is set against the net cost of the policy: full premium, minus the rebate of your tier and age band, plus your loading, all over the days you would hold it. Example: a single person in NSW on {K.usd(130000)}, aged 35, no loading, pays {K.usd(ex.mls.total)} of surcharge; the cheapest exempt policy costs {K.usd(ex.premium.gross)} minus {K.usd(ex.premium.rebate)} of rebate, {K.usd(ex.premium.net)} net. The break-even income is the lowest one, on a $100 grid, at which the policy costs less than the surcharge, other inputs held fixed.</p>
+
+    <h2>Tests</h2>
+    <p>Before each release, automated tests check every threshold boundary, the ATO worked examples (Tom, Josh, Michelle, Jill and Kevin, Rebecca's rebate), the Ombudsman's loading examples, the {K.pct(P.lhc.max, 0)} cap, the family threshold for three children, the spouse floor, the presence of a policy for every state and type of cover within the excess limits, and the absence of any empty or invalid figure in every calculator. The pages draw their figures from the same functions as the calculators, so a corrected rule changes every page that cites it.</p>
+
+    <h2>What is left out</h2>
+    <p>Waiting periods, the clinical categories a policy covers, extras cover, gap payments, the age-based discount, amounts on which family trust distribution tax was paid, and the exact loading after a complex history of gaps. None of the results is a tax assessment or a recommendation: the ATO assesses the surcharge and your insurer applies the rebate and the loading.</p>
+  </article>
+</PageLayout>
