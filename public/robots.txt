@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://au-health-cover.example/sitemap-index.xml
+Sitemap: https://aushealthcover.com/sitemap-index.xml

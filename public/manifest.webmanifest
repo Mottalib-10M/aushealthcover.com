@@ -1,6 +1,6 @@
 {
- "name": "Cover or Surcharge",
- "short_name": "Cover or Surcharge",
+ "name": "Aus Health Cover",
+ "short_name": "Health Cover",
  "description": "Medicare levy surcharge 2026-27 against the cheapest hospital cover that avoids it, after the rebate and any Lifetime Health Cover loading, for your state and family.",
  "start_url": "/en/",
  "display": "standalone",

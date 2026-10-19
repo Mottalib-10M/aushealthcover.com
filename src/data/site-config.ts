@@ -1,6 +1,6 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://au-health-cover.example";
-export const SITE_NAMES: Record<string, string> = {"en": "Cover or Surcharge"};
+export const SITE_URL = "https://aushealthcover.com";
+export const SITE_NAMES: Record<string, string> = {"en": "Aus Health Cover"};
 export const LANG_TAGS: Record<string, string> = {"en": "en-AU"};
 export const OG_LOCALES: Record<string, string> = {"en": "en_AU"};
 export const LOCALE_TAG = 'en-AU';
@@ -16,7 +16,7 @@ export const AUTHOR_DESC: Record<string, string> = {"en": "Radif Partners reads 
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"en": ["Medicare levy surcharge thresholds and tiers", "Income for Medicare levy surcharge purposes", "Private health insurance rebate tiers and age bands", "Lifetime Health Cover loading, base day and days of absence", "Appropriate level of private patient hospital cover and excess limits", "Hospital policy premiums by state from PrivateHealth.gov.au data"]};
-export const CONTACT_EMAIL = "contact@au-health-cover.example";
+export const CONTACT_EMAIL = "contact@aushealthcover.com";
 export const THEME_COLOR = '#00653A';
 export const LOGO_SYMBOL = 'HC';
 export const BING_VERIFY_CODE = '';
