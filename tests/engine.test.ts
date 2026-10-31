@@ -126,6 +126,9 @@ describe('premiums file (PrivateHealth.gov.au, data.gov.au)', () => {
     expect(be).toBeGreaterThan(105000);
     const at = compare({ status: 'single', you: { mlsIncome: be }, region: 'NSW', oldest: 35, loading: 0 });
     expect(at.coverCheaper).toBe(true);
+    // Audit of 2026-10-28: the figure is the exact first dollar, not a $500 step (cover already wins at $105,001 in NSW).
+    expect(breakEven({ status: 'single', region: 'NSW', oldest: 35, loading: 0 }, 500)).toBe(be);
+    expect(compare({ status: 'single', you: { mlsIncome: be - 1 }, region: 'NSW', oldest: 35, loading: 0 }).coverCheaper && be - 1 > 105000).toBe(false);
   });
   it('days from months', () => { expect(daysFromMonths(12)).toBe(365); expect(daysFromMonths(0)).toBe(0); });
 });

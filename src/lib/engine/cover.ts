@@ -129,7 +129,14 @@ export function breakEven(x: Omit<CompareIn, 'you'> & { you?: Person }, step = 1
   const start = x.status === 'couple' || x.status === 'family' ? Math.max(0, thresholds(x.status, x.children ?? 0)[0] - (x.partner?.mlsIncome ?? 0)) : thresholds(x.status, x.children ?? 0)[0];
   for (let inc = Math.floor(start / step) * step; inc <= 1_000_000; inc += step) {
     const r = compare({ ...x, you: { mlsIncome: inc } } as CompareIn);
-    if (r.mls.total > 0 && r.coverCheaper) return inc;
+    if (r.mls.total > 0 && r.coverCheaper) {
+      // the step only finds the bracket: the exact dollar is the first one inside it where cover wins
+      for (let k = Math.max(0, inc - step + 1); k < inc; k++) {
+        const q = compare({ ...x, you: { mlsIncome: k } } as CompareIn);
+        if (q.mls.total > 0 && q.coverCheaper) return k;
+      }
+      return inc;
+    }
   }
   return null;
 }
