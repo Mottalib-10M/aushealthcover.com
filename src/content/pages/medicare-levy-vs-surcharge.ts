@@ -24,7 +24,7 @@ export default definePage({
     { q: 'Who pays no Medicare levy at all?', a: `In ${P.mls.prior.year}, a single taxpayer whose taxable income is ${K.usd(low.lower)} or less pays none, and between ${K.usd(low.lower)} and ${K.usd(low.upper)} it is reduced. For those entitled to the seniors and pensioners tax offset the lines are ${K.usd(low.saptoLower)} and ${K.usd(low.saptoUpper)}. Exemptions also exist for some medical conditions, foreign residents and people not entitled to Medicare benefits.` },
   ],
   body: (h) => `
-<h2>Side by side</h2>
+<h2>Medicare levy and surcharge side by side</h2>
 ${h.table(['', 'Medicare levy', 'Medicare levy surcharge'], [
     ['Rate', K.pct(L.rate, 0), `${K.pct(P.mls.rates[1], 0)}, ${K.pct(P.mls.rates[2], 2)} or ${K.pct(P.mls.rates[3], 1)}`],
     ['Who pays', 'most taxpayers', `income over ${K.usd(P.mls.single[0])} single or ${K.usd(P.mls.family[0])} family, without appropriate hospital cover`],

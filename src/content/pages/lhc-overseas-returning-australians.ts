@@ -11,7 +11,7 @@ export default definePage({
   title: 'LHC Loading After Living Overseas 2026: Coming Back Home',
   description: `LHC loading after living overseas in 2026: a year from your return to buy hospital cover, short visits home ignored, time abroad not counted in the ${K.num(L.daysOfAbsence)} days.`,
   h1: 'Lifetime Health Cover after living overseas: the rules for returning Australians',
-  intro: `Enter the days you have spent in Australia without hospital cover since your base day, leaving out your years abroad: the calculator says whether a loading applies when you rejoin.`,
+  intro: `Enter the days you have spent in Australia without hospital cover since your base day, leaving out your years abroad: the calculator says whether an LHC loading applies when you rejoin after living overseas.`,
   resume: `Australians who live abroad are not penalised for the years they spend away. If you are a citizen or permanent resident and were overseas on the 1 July after your 31st birthday, you avoid any Lifetime Health Cover loading by buying private hospital cover before the first anniversary of your return. Your return is your first stay in Australia of ${L.overseasVisitDays} days or more: shorter trips home, for a wedding or a Christmas, leave you overseas for these rules. If you already held hospital cover after your base day and cancelled it to live abroad for at least a year, the days you spend outside Australia are not taken from your lifetime allowance of ${K.num(L.daysOfAbsence)} days without cover. The Ombudsman's example of Wei shows the limit: posted to Canada, he came home in 2012, waited three years to rejoin, used ${K.num(1114)} days of absence and pays ${K.tool('absence', { gap: 1114, cur: 0 }).value}. Buy within the year, and nothing is added.`,
   tool: 'absence',
   toolArg: { gap: 1114, cur: 0, rg: 'QLD' },
@@ -22,7 +22,7 @@ export default definePage({
     { q: 'I was over 31 and living abroad on 1 July 2000. What applies to me?', a: `You are treated as having held hospital cover on your base day. No loading builds up while you are overseas, and once back you have ${K.num(L.daysOfAbsence)} days of absence to buy cover without a loading. PrivateHealth.gov.au describes Haruki, back in 2012, who bought cover in December 2018, four years after his days ran out, and paid ${K.pct(4 * L.perYear, 0)}.` },
   ],
   body: (h) => `
-<h2>Which of the three situations is yours?</h2>
+<h2>LHC loading after living overseas: which of the three situations is yours?</h2>
 <p>The Ombudsman's ${h.src('phio_lhc', 'Lifetime Health Cover page')} treats expatriates in three groups, and the deadline is different for each. Find your row before doing any arithmetic.</p>
 ${h.table(['Your situation', 'Deadline to buy without a loading', 'Ombudsman example'], [
   ['Citizen or permanent resident, overseas on the 1 July after your 31st birthday (birthday after 1 July 2000)', 'First anniversary of your return', 'Phuong'],

@@ -11,7 +11,7 @@ export default definePage({
   title: 'Private Health Insurance 2026: The Tax Rules in Australia',
   description: `Private health insurance in Australia in 2026-27: what hospital, extras and ambulance cover change at tax time: surcharge, rebate, loading and key dates.`,
   h1: 'Private health insurance in Australia: what it changes at tax time',
-  intro: 'New to the subject? Enter your income and state: the calculator shows what the tax system charges you without hospital cover and what the cheapest policy costs with it.',
+  intro: 'New to private health insurance? Enter your income and state: the calculator shows what the tax system charges you without hospital cover and what the cheapest policy costs with it.',
   resume: `Private health insurance in Australia comes in two parts that the tax system treats very differently. Hospital cover pays towards treatment as a private patient in hospital; general treatment cover, often called extras, pays towards dental, optical, physiotherapy and similar services; some policies add ambulance. Only hospital cover takes you out of the Medicare levy surcharge, the extra ${K.pct(M.rates[1], 0)} to ${K.pct(M.rates[3], 1)} that a single person with an income for MLS purposes over ${K.usd(M.single[0])} pays in ${P.incomeYear} without it. The government rebate, by contrast, applies to hospital, general treatment and ambulance policies alike, from ${K.pct(K.reb(0, 40), 3)} of the premium for most people under 65 down to nothing at the top income tier. The Lifetime Health Cover loading, finally, is added by your insurer if you first buy hospital cover after the 1 July following your 31st birthday. Those three rules, the surcharge, the rebate and the loading, are the whole tax side of private health insurance.`,
   tool: 'cover',
   toolArg: { st: 'single', inc: 118000, rg: 'VIC', age: 29 },
@@ -23,7 +23,7 @@ export default definePage({
     { q: 'When do the figures for private health insurance change?', a: `Twice a year. Premiums and rebate percentages change on 1 April; the ${P.incomeYear} rebate rates run to 31 March 2027. Income thresholds for the surcharge and the rebate change on 1 July with the income year. Your tax return then settles both: the surcharge at question M2 and any rebate not already taken as a premium reduction.` },
   ],
   body: (h) => `
-<h2>Three products, one tax rule that matters</h2>
+<h2>Private health insurance: three products, one tax rule that matters</h2>
 <p>An Australian health insurer sells hospital cover, general treatment cover and ambulance cover, alone or combined. Since 1 April 2020 every hospital policy has been classified in one of four tiers, Gold, Silver, Bronze or Basic, with Plus versions of the lower three for policies that cover more than the minimum. The tier tells you what a policy must cover; it tells the tax office nothing. For the surcharge, the only question is whether you hold hospital cover from a registered Australian insurer with an excess of no more than ${K.usd(M.excessLimit.single)} on a policy for one person or ${K.usd(M.excessLimit.other)} on a couple or family policy.</p>
 ${h.table(['Type of cover', 'Avoids the surcharge', 'Gets the rebate', 'Can carry the LHC loading'], [
     ['Hospital cover within the excess limits', 'Yes', 'Yes', 'Yes'],

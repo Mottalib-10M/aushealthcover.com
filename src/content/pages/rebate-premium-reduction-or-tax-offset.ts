@@ -13,7 +13,7 @@ export default definePage({
   title: 'Rebate as Premium Reduction or Tax Offset 2026: Which Tier?',
   description: `Health insurance rebate in 2026-27: take it as a lower premium or as a refundable offset in your return. Nominate the right tier or settle up at tax time.`,
   h1: 'Premium reduction or tax offset: two ways to receive the rebate',
-  intro: 'Choose the tier you would nominate and test the income you really expect: the calculator shows the rebate you are owed, so you can see whether a tax bill or a refund is coming.',
+  intro: 'Choose the tier you would nominate and test the income you really expect: the calculator shows the rebate you are owed, so you can see whether, after a premium reduction, a tax bill or a refund is coming.',
   resume: `The private health insurance rebate can reach you in two ways, and the amount is the same in the end. Most people take it as a premium reduction: you nominate an income tier with your insurer, which charges you the premium minus the rebate of that tier. The alternative is to pay the full premium and claim the rebate as a refundable tax offset when you lodge your return. Either way, the ATO checks your actual income for surcharge purposes after 30 June. If you nominated a tier that was too low, you received too much rebate and the difference becomes a tax liability; if you nominated too high a tier, the ATO pays the shortfall as an offset. There is no extra penalty for a wrong estimate. In ${P.incomeYear} the tiers moved up: the base tier for a single person now runs to ${K.usd(s[0])} instead of ${K.usd(old[0])}, so some people who nominated tier 1 last year can now nominate the base tier and pay less each month.`,
   tool: 'rebate',
   toolArg: { st: 'single', inc: 120000, gp, age: 45 },
@@ -25,7 +25,7 @@ export default definePage({
     { q: 'Where does the rebate information on my tax return come from?', a: 'Usually from your insurer. PrivateHealth.gov.au says rebate details are generally filled in automatically in the tax return, and you can ask your insurer for a statement after the end of the financial year. The statement shows the premiums paid, the rebate received as a reduction and the tier you nominated.' },
   ],
   body: (h) => `
-<h2>Same entitlement, different timing</h2>
+<h2>Rebate as premium reduction or tax offset: same entitlement, different timing</h2>
 <p>The rebate you are owed for a year is fixed after 30 June, once your income for surcharge purposes and your family status on that day are known. What you choose is only how the money moves before then.</p>
 ${h.table(['', 'Premium reduction', 'Refundable tax offset'], [
   ['What you pay the insurer', 'Premium minus the rebate of the tier you nominate', 'The full premium'],

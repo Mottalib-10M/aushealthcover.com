@@ -14,7 +14,7 @@ export default definePage({
   title: 'Compare Health Insurance 2026: Every Exempt Policy by State',
   description: `Compare health insurance in 2026 from the PrivateHealth.gov.au file: cheapest and median hospital premium by state and tier, no quote form, no partner list.`,
   h1: 'Compare health insurance from the public file, not from a quote form',
-  intro: 'Choose a household and the lowest hospital tier you would accept: the table ranks every state by its cheapest open policy that avoids the surcharge.',
+  intro: 'To compare health insurance on price, choose a household and the lowest hospital tier you would accept: the table ranks every state by its cheapest open policy that avoids the surcharge.',
   resume: `Comparing health insurance in Australia does not require a quote form. The Private Health Insurance Ombudsman publishes every policy on sale, with its premium in each state, its hospital tier and its excess, and releases the whole file each month on data.gov.au. In the release of ${K.day(PR.release)} we count ${K.num(vic.n)} open single policies in Victoria that avoid the Medicare levy surcharge, sold by ${vic.funds} insurers, and ${K.num(sumN)} such state and policy combinations across the country. Inside one state and one tier the spread is wide: a Victorian single Gold policy costs from ${K.usd2(gold.cheapest)} a month before the rebate, while the median Gold policy costs ${K.usd2(gold.median)}. Comparison sites show the policies of insurers they have agreements with. The table on this page shows the cheapest of all of them, for each state and tier, and stops there. It is a starting point for your own reading of each policy statement, not a recommendation of any insurer.`,
   tool: 'states',
   toolArg: { st: 'single', ht: 'any' },
@@ -37,7 +37,7 @@ ${h.mini('states', { t: 'Cheapest Silver or better, family cover', p: ['st', 'ht
 <h2>The same comparison for a family</h2>
 <p>A family policy in Victoria starts at ${K.usd2(vicF.cheapest.monthly)} a month before the rebate, with a median of ${K.usd2(vicF.median)} across ${K.num(vicF.n)} open policies. Family premiums are about twice single ones for the same policy, and the rebate is the same percentage, so the comparison with the surcharge depends on the combined income. A family whose income for MLS purposes is over ${K.usd(M.family[0])} must cover both partners and every dependent child to avoid the surcharge; one person left out and the household pays it. The ${h.a('mls-families', 'families page')} works through the thresholds with children.</p>
 
-<h2>What a comparison should check, in order</h2>
+<h2>What to check when you compare health insurance, in order</h2>
 <ol>
 <li><strong>Does it remove the surcharge?</strong> Hospital cover, a registered Australian insurer, an excess within the limits. Extras only, Overseas Visitors Health Cover and foreign insurers do not count.</li>
 <li><strong>What does it cover?</strong> Read the Private Health Information Statement. A Basic policy can cost less than half the price of a Gold one because it covers far less; ${h.a('basic-hospital-cover', 'the Basic cover page')} looks at what that means.</li>

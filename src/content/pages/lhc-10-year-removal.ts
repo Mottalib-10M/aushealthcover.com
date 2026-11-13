@@ -10,8 +10,8 @@ export default definePage({
   nav: 'LHC loading removal after 10 years', card: `Ten continuous years with the loading, then it drops to ${K.pct(0, 0)}.`,
   title: 'LHC Loading Removal 2026: When the 10 Years Are Up',
   description: `LHC loading removal in 2026: the loading stops after ${Y} continuous years of hospital cover. Count the months left, what you still pay, and what resets it.`,
-  h1: 'When the Lifetime Health Cover loading goes: the ten year count',
-  intro: 'Enter how long you have paid your loading and its rate: the calculator counts the months left and what the loading will still cost you before it drops.',
+  h1: 'LHC loading removal: when the Lifetime Health Cover loading goes after ten years',
+  intro: 'Enter how long you have paid your loading and its rate: the calculator counts the months left until LHC loading removal and what the loading will still cost you before it drops.',
   resume: `A Lifetime Health Cover loading is not for life. Once you have paid it for ${Y} continuous years of hospital cover, your insurer removes it and your premium falls to the standard price, for as long as you keep your cover. The ATO puts it in dollars: join at 40 and you could pay ${K.pct(K.lhc(40), 0)} more each year for ${Y} years; join at 50 and it is ${K.pct(K.lhc(50), 0)} more for ${Y} years. Breaks allowed under the days of absence rules do not reset the count, but they do not count towards it either, so a two year gap pushes the end date back two years. The Ombudsman's example of Kaia shows this: a ${K.pct(K.lhc(33), 0)} loading from November 2005, nine years and two months of cover, two years abroad, then ${K.num(297)} more days of loading before it was removed in January 2018. If you cancel after the loading has gone, a new loading can apply when you return.`,
   tool: 'removal',
   toolArg: { held: 4, ld: 20, st: 'single', rg: 'TAS' },
@@ -22,7 +22,7 @@ export default definePage({
     { q: 'What happens if I cancel my cover after the loading has been removed?', a: `The ATO and PrivateHealth.gov.au both warn that you may become liable for a loading again if you take out hospital cover later. Your days of absence still apply: a gap within the ${K.num(L.daysOfAbsence)} day lifetime allowance leaves the loading at zero, a longer one brings a loading back with a new ten year count.` },
   ],
   body: (h) => `
-<h2>Ten years, measured how?</h2>
+<h2>LHC loading removal after ten years, measured how?</h2>
 <p>${h.src('phio_lhc', 'PrivateHealth.gov.au')} says the loading is removed once you have held it on your hospital cover for ${Y} continuous years. Three rules shape that count:</p>
 <ul>
 <li>It starts when you first pay the loading, on the day your hospital cover begins.</li>

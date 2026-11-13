@@ -35,7 +35,7 @@ ${h.mini('cover', { t: 'Test a Victorian premium', p: ['inc', 'prem'], d: { rg: 
 
 <h2>How to use the ladder</h2>
 <p>Start from the surcharge you would pay, since it is money you spend either way once you are over the threshold. Subtract the net cost of the cheapest policy: what is left is the budget for better cover that costs you nothing extra compared with doing nothing. At ${K.usd(INC)} that budget is ${K.usd(base.saving)} a year, about ${K.usd(base.saving / 12)} a month, enough to reach the cheapest Bronze Plus policy in the table with room to spare. Beyond that, each step up is paid for by you, not by the tax you avoid. Two cautions apply. A tier name sets the floor of what a policy covers, so read the Private Health Information Statement of each candidate. And waiting periods, which the Ombudsman warns may apply again after a break in cover, are not modelled here.</p>
-<h2>Couples and families in Victoria</h2>
+<h2>Hospital cover for couples and families in Victoria</h2>
 <p>For two people the cheapest exempt policy is ${K.usd2(S.two.cheapest.monthly)} a month and the cheapest Gold ${K.usd2(S.two.byTier.Gold.cheapest)}; for a family, ${K.usd2(S.fam.cheapest.monthly)} and ${K.usd2(S.fam.byTier.Gold.cheapest)}. Their surcharge is tested on the combined income against the family threshold, so the ladder above applies with the household sum in place of a single income.</p>
 <p>Sources: PrivateHealth.gov.au file of ${K.day(K.PREM.release)} (${h.src('datagov_phi', 'data.gov.au')}); tiers: ${h.src('phio_changes', 'PrivateHealth.gov.au')}; thresholds and rebate: ${h.src('ato_mls_rates', 'ATO')}. Naming a policy reports a price, not a recommendation. ${h.a('method', 'How the figures are built')}.</p>
 `,

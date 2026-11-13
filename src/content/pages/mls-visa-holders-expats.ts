@@ -13,7 +13,7 @@ export default definePage({
   title: 'MLS for Visa Holders and Expats 2026: Exempt Days in AUD',
   description: `Medicare levy surcharge for visa holders and expats in 2026-27: a levy exemption also removes the surcharge for those days, if your dependants are exempt too.`,
   h1: 'Medicare levy surcharge for visa holders, expats and foreign residents',
-  intro: 'Enter the days of 2026-27 for which you hold a Medicare levy exemption and your income: the surcharge is charged on the other days only.',
+  intro: 'Visa holder or expat, enter the days of 2026-27 for which you hold a Medicare levy exemption and your income: the MLS is charged on the other days only.',
   resume: `Temporary residents who are not entitled to Medicare and foreign residents for tax purposes usually pay no Medicare levy surcharge, but not because of their visa. They pay none because they qualify for a Medicare levy exemption, and the ATO's rule is that a person in a Medicare levy exemption category for a period is also exempt from the surcharge for that period. The condition that catches people is the family one: the exemption only works if you have no dependants for the period, or if all your dependants, your spouse included, are in an exemption category too. A temporary resident shows the period with a Medicare Entitlement Statement from Services Australia. Overseas Visitors Health Cover and Overseas Student Health Cover do not count as hospital cover for the surcharge, and neither does a policy from an overseas insurer. For a single person with ${K.usd(inc)} of income for MLS purposes and no exemption, the ${P.incomeYear} surcharge is ${K.usd(full.total)} for the full year; the calculator above removes your exempt days.`,
   tool: 'visa',
   toolArg: { ex: 200, inc, st: 'single', pinc: 0, ch: 1 },
@@ -47,7 +47,7 @@ ${h.table(['Policy held', 'Avoids the surcharge', 'Rebate'], [
   ], `From the ATO guide for overseas visitors by policy type and PrivateHealth.gov.au, read on ${K.day(P.retrieved_at)}.`, ['l', 'l', 'l'])}
 <p>A visitor who is not eligible for Medicare may still buy a complying policy from an Australian insurer. It earns no rebate, and the ATO asks such visitors to delete any pre-filled private health insurance details before they lodge in myTax, answer No to the cover question, and give the number of days they do not have to pay the surcharge, usually ${D}.</p>
 
-<h2>Exempt for part of the year</h2>
+<h2>Exempt for part of the year: the MLS for visa holders and expats</h2>
 <p>Arrivals, departures and changes of visa rarely fall on 1 July. The surcharge is charged per day, so only the days outside the exemption, without appropriate hospital cover, are charged. For a single person with ${K.usd(inc)} of income for MLS purposes in ${P.incomeYear}, the table shows the surcharge by number of exempt days.</p>
 ${h.table(['Exempt days', 'Days charged', 'Surcharge'], rows, `Single, no dependants, ${K.TN[full.tier].toLowerCase()} rate of ${K.pct(full.rate, 2)}, no hospital cover on the charged days.`, ['r', 'r', 'r'])}
 ${h.mini('visa', { t: 'Your exempt days and your income', p: ['ex', 'inc'], d: { ex: 120, inc: 150000 }, c: 'Open the full visa calculator' })}

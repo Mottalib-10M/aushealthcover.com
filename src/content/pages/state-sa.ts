@@ -14,7 +14,7 @@ export default definePage({
   title: 'Hospital Cover SA 2026: Cheapest Policies and the Rebate',
   description: `Hospital cover in South Australia for 2026: cheapest exempt policy ${K.usd2(c.cheapest.monthly)} a month single, ${K.usd2(two.cheapest.monthly)} couple, and how the oldest member's age moves the rebate.`,
   h1: 'Hospital cover in South Australia: the price after the rebate, by age',
-  intro: 'The rebate grows with the age of the oldest person on the policy. For an Adelaide couple in their late sixties, that changes the sum.',
+  intro: 'The rebate on hospital cover grows with the age of the oldest person on the policy. For an Adelaide couple in their late sixties, that changes the sum.',
   resume: `South Australia has the third lowest premiums for the cheapest hospital cover that avoids the Medicare levy surcharge, after the Northern Territory and Western Australia: ${K.usd2(c.cheapest.monthly)} a month for one person and ${K.usd2(two.cheapest.monthly)} for a couple before the rebate, in the PrivateHealth.gov.au file of ${K.day(K.PREM.release)}. What you pay after the rebate depends on two things, the income tier and the age of the oldest person covered. A couple on a combined ${K.usd(230000)} sits in family tier 1, where the rebate is ${K.pct(K.reb(1, 40), 3)} if both are under 65, ${K.pct(K.reb(1, 67), 3)} between 65 and 69 and ${K.pct(K.reb(1, 72), 3)} from 70. On the cheapest couple policy that is ${K.usd(coupleAt(40).premium.net)}, ${K.usd(coupleAt(67).premium.net)} or ${K.usd(coupleAt(72).premium.net)} a year, against a surcharge of ${K.usd(coupleAt(40).mls.total)} for the couple without cover. A bill before Parliament would remove the higher rates for older members from April 2027.`,
   tool: 'cover',
   toolArg: { rg: 'SA', st: 'couple', inc: 130000, pinc: 100000, age: 67 },
@@ -30,7 +30,7 @@ ${h.table(['Older partner', 'Rebate', 'Surcharge without cover', 'Cheapest polic
 <p>The surcharge column does not move with age: it is a tax on income, not on the policy. The net premium falls as the rebate rises. For this couple the cheapest policy costs less than the surcharge at every age. The Silver Plus policy, which covers far more, is ${coupleAt(40, silver.cheapest).coverCheaper ? 'also cheaper than the surcharge' : 'dearer than the surcharge'} at 40 and ${coupleAt(72, silver.cheapest).coverCheaper ? 'cheaper' : 'still dearer'} at 72. A loading on either partner would add to every net figure, since the rebate is never paid on the loading.</p>
 ${h.mini('retiree', { t: 'What the 2027 proposal would cost your policy', p: ['age', 'gp'], d: { age: 67, gp: Math.round(silver.cheapest * 12) }, c: 'Open the over 65 calculator' })}
 
-<h2>Choice in South Australia</h2>
+<h2>Hospital cover choice in South Australia</h2>
 <p>The file holds ${K.num(c.n)} open single policies and ${K.num(two.n)} couple policies that avoid the surcharge in the state, from ${c.funds} insurers. For one person, the three cheapest are close together: ${c.cheapest.fund} at ${K.usd2(c.cheapest.monthly)}, ${c.runnersUp[0].fund} at ${K.usd2(c.runnersUp[0].monthly)} and ${c.runnersUp[1].fund} at ${K.usd2(c.runnersUp[1].monthly)}, all Basic tier. The median single policy, ${K.usd2(c.median)}, is ${K.dec(c.median / c.cheapest.monthly, 1)} times the cheapest. For couples the tiers line up like this:</p>
 ${h.table(['Tier', 'Cheapest from', 'Cheapest per month', 'Median per month', 'Policies'], S.tierRows('couple'), 'Couple cover in South Australia, before the rebate.', ['l', 'l', 'r', 'r', 'r'])}
 

@@ -17,7 +17,7 @@ export default definePage({
   title: 'Income for MLS Purposes 2026-27: What the ATO Adds Back',
   description: `Income for MLS purposes in 2026-27: taxable income plus fringe benefits, super and investment losses, tested against ${K.usd(S[0])} single or ${K.usd(F[0])} family.`,
   h1: 'Income for MLS purposes: the figure that sets your tier',
-  intro: 'Split your income into its parts: the tool adds back what the ATO adds back and shows which part the surcharge is charged on.',
+  intro: 'Split your income for MLS purposes into its parts: the tool adds back what the ATO adds back and shows which part the surcharge is charged on.',
   resume: `Income for MLS purposes is not your taxable income. The ATO starts from taxable income, leaves out any assessable first home super saver released amount, and adds four things if they apply to you: reportable fringe benefits from your income statement, reportable super contributions (employer contributions made under salary sacrifice plus personal contributions you claimed as a deduction), your total net investment loss from shares and rental property, and any amount on which family trust distribution tax was paid. For a couple, both partners' totals are added together. That sum decides your tier against the ${P.incomeYear} thresholds of ${K.usd(S[0])} single and ${K.usd(F[0])} family. The rate of the tier is then charged on a narrower base: taxable income, reportable fringe benefits and family trust amounts only. Super contributions and investment losses can push you into a tier without being charged themselves. The ATO case of Josh shows it: ${K.usd(127000)} of income for MLS purposes, but a surcharge worked out on ${K.usd(110000)}.`,
   tool: 'income',
   toolArg: { ti: 98000, rfb: 12000, sup: 0, inv: 0, st: 'single' },
@@ -60,7 +60,7 @@ ${h.mini('income', { t: 'Add back your own super and losses', p: ['ti', 'sup', '
 
 ${h.box('A couple adds two columns, then splits the bill', `<p>The combined figure only sets the tier. Each partner is then charged on their own taxable income and fringe benefits, for their own days without cover. A partner whose own income for MLS purposes is ${K.usd(M.spouseOwnIncomeFloor.value)} or less is not liable when the couple was together all year (${M.spouseOwnIncomeFloor.year} figure; the ${P.incomeYear} one is not yet published). The ${h.a('mls-couples', 'couples page')} has the details.</p>`)}
 
-<h2>The same figure sets your rebate</h2>
+<h2>Income for MLS purposes also sets your rebate</h2>
 <p>The ATO uses the same sum, under the name income for surcharge purposes, to set your private health insurance rebate. An add-back that moves you from tier 1 to tier 2 raises the surcharge rate from ${K.pct(M.rates[1], 0)} to ${K.pct(M.rates[2], 2)} and cuts the rebate for people under 65 from ${K.pct(K.reb(1, 40), 3)} to ${K.pct(K.reb(2, 40), 3)} of the premium. If you take the rebate as a reduced premium, you tell your insurer which tier you expect to be in; claim too much and you may have a tax liability when you lodge, so the ATO asks you to tell the insurer when your income moves to another tier. ${h.a('private-health-insurance-rebate', 'The rebate page')} explains the reconciliation.</p>
 
 <h2>Sources</h2>

@@ -13,7 +13,7 @@ export default definePage({
   title: 'LHC Base Day 2026: Turning 31 and Your Hospital Cover Date',
   description: `LHC base day in 2026: the 1 July after your 31st birthday is the deadline to take hospital cover with no Lifetime Health Cover loading. What a delay costs.`,
   h1: 'Your Lifetime Health Cover base day: the deadline that follows your 31st birthday',
-  intro: 'Enter your age on 1 July 2026 and how long you would wait: the calculator adds the loading you would carry for ten years and the surcharge paid in the meantime.',
+  intro: 'Enter your age on 1 July 2026 and how long you would wait after your LHC base day: the calculator adds the loading you would carry for ten years and the surcharge paid in the meantime.',
   resume: `Your Lifetime Health Cover base day is, for most people, the 1 July following your 31st birthday. Hold private hospital cover on that day and keep it, and you will never pay a loading. Miss it, and the first policy you buy later carries ${K.pct(L.perYear, 0)} extra for every year you were over 30 on the 1 July before you joined, for ten years. If you turn 31 in March 2027, your base day is 1 July 2027; if you turned 31 in September 2026, it is also 1 July 2027. Someone born in May 1995 turned 31 in May 2026 and reached their base day on 1 July 2026: buying in August 2026 already costs ${K.pct(K.lhc(31), 0)}. On the cheapest single policy in Victoria, ${K.usd(vic)} a year before the rebate, each ${K.pct(L.perYear, 0)} of loading adds about ${K.usd(vic * L.perYear)} a year. Under 31 there is no loading at all, and some insurers give younger people an age-based discount.`,
   tool: 'wait',
   toolArg: { age: 31, yrs: 3, inc: 115000, rg: 'VIC' },
@@ -24,7 +24,7 @@ export default definePage({
     { q: 'Can I keep an age-based discount if I join before 30?', a: `Insurers may offer up to ${K.pct(AD.max, 0)} off hospital premiums to people who join between 18 and 29, ${K.pct(L.perYear, 0)} for each year under 30. The discount is kept until 41, then reduced by ${K.pct(AD.phaseOutPerYear, 0)} a year. It is optional for the insurer, and dependants on a family policy cannot receive it.` },
   ],
   body: (h) => `
-<h2>Finding your own date</h2>
+<h2>Finding your own LHC base day</h2>
 <p>The base day depends only on your date of birth, unless one of the special cases below applies. Take the date of your 31st birthday, then go forward to the next 1 July. The examples cover the people turning 31 around now.</p>
 ${h.table(['Date of birth', '31st birthday', 'LHC base day', 'Loading if you join after it, before the next 1 July'], [
   ['15 March 1995', '15 March 2026', '1 July 2026', K.pct(K.lhc(31), 0)],

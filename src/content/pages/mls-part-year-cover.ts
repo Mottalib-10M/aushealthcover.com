@@ -20,7 +20,7 @@ export default definePage({
   title: 'MLS Part-Year Cover 2026-27: The Surcharge Per Day Uncovered',
   description: `MLS with part-year cover in 2026-27: charged per day without hospital cover, so joining in January roughly halves it. Days already gone, suspensions and travel.`,
   h1: 'Part-year hospital cover: how the surcharge counts the days',
-  intro: 'Say how many months of the income year have gone without cover: the tool compares staying uncovered to 30 June with joining today.',
+  intro: 'Say how many months of the income year have gone without cover: the tool compares staying uncovered to 30 June with taking part-year cover from today.',
   resume: `The Medicare levy surcharge is not an all-or-nothing charge for the year. It is worked out for the number of days on which you, your spouse or a dependant lacked an appropriate level of private patient hospital cover, divided by ${DAYS}. A single person on ${K.usd(inc)} of income for MLS purposes, which is ${K.TN[full.tier].toLowerCase()} in ${P.incomeYear}, would pay ${K.usd(full.total)} for a full year without cover, about ${K.usd2(perDay)} a day. Take out a policy on 1 January and roughly half of that disappears. The days already gone cannot be undone, but every day after the start date of the policy is free of surcharge. Your insurer's private health insurance statement shows the number of covered days, and you report the days you are not liable at question M2 of your return. Suspending a policy, for example while travelling, does not count as cover: the surcharge runs for the suspended days. Cancelling cover to travel overseas exposes you in the same way.`,
   tool: 'partyear',
   toolArg: { gone: 4, st: 'single', inc: 130000, rg: 'NSW' },
@@ -36,7 +36,7 @@ export default definePage({
 <p><strong>surcharge = (taxable income + reportable fringe benefits) x rate x days without cover / ${DAYS}</strong></p>
 <p>The ATO's own illustration of the fraction is Michelle, in the ${M.prior.year} M2 instructions: ${K.usd(102000)} x ${K.pct(M.rates[1], 0)} x 262 / 365. The days counted are those on which you, your spouse or any dependent child lacked cover. If one family member joins the policy late, the whole family is charged for the uncovered days, as the ${h.a('mls-families', 'families page')} shows with the ATO example of Jill and Kevin.</p>
 
-<h2>Months without cover, side by side</h2>
+<h2>Part-year cover and the MLS: months without cover, side by side</h2>
 <p>The table takes a single person in NSW on ${K.usd(inc)} and sets the surcharge for the months without cover against the cost, after the rebate, of the cheapest exempt policy for the rest of the year.</p>
 ${h.table(['Months without cover', 'Days charged', 'Surcharge for those days', 'Cheapest cover for the rest of the year'], rows, `${P.incomeYear} thresholds, tier rebate from 1 April 2026, cheapest NSW single policy in the PrivateHealth.gov.au file of ${K.day(K.PREM.release)}. Months converted to days on a ${DAYS}-day year.`, ['l', 'r', 'r', 'r'])}
 <p>The two columns move in opposite directions: each month of delay adds surcharge and saves premium. At this income the month of premium is cheaper than the month of surcharge, so joining sooner costs less in total. At an income just over the threshold the gap narrows, and a ${h.a('lifetime-health-cover-loading', 'Lifetime Health Cover loading')} raises the premium side.</p>

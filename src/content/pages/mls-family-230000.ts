@@ -17,7 +17,7 @@ export default definePage({
   title: 'MLS for a Family on $230,000 in 2026-27: Tier 1 Split by Two',
   description: `Medicare levy surcharge for a family on $230,000 with two children in 2026-27: tier 1, ${K.usd(m.total)} without cover split by own income, against family cover by state.`,
   h1: 'Medicare levy surcharge for a family on $230,000: one tier, two bills',
-  intro: 'Enter each partner\'s income and the number of children: the calculator tests the family threshold on the total, then charges each partner on their own income.',
+  intro: 'Enter each partner\'s income and the number of children: the calculator tests the total, $230,000 or any other, against the MLS family threshold, then charges each partner on their own income.',
   resume: `A couple with two dependent children and a combined income for MLS purposes of ${K.usd(A + B)} in ${P.incomeYear} is above the family threshold, which is ${K.usd(M.family[0])} plus ${K.usd(M.childIncrement)} for the second child, ${K.usd(m.thresholds[0])} in all. That puts the household in tier 1, where the surcharge rate is ${K.pct(M.rates[1], 0)}. The rate is not charged on the household total. Each partner pays it on their own taxable income and reportable fringe benefits, for the days the family was not covered: with ${K.usd(A)} and ${K.usd(B)}, that is ${K.usd(m.you.amount)} and ${K.usd(m.partner!.amount)}, ${K.usd(m.total)} together. To avoid it, the policy must cover both partners and both children. The cheapest exempt family policy in New South Wales costs ${K.usd(nsw.premium.net)} a year after the tier 1 rebate of ${K.pct(K.reb(1, 40), 3)}, ${nsw.coverCheaper ? `${K.usd(nsw.saving)} less than` : `${K.usd(-nsw.saving)} more than`} the two surcharges, in the PrivateHealth.gov.au file of ${K.day(K.PREM.release)}.`,
   tool: 'cover',
   toolArg: { st: 'family', inc: A, pinc: B, ch: KIDS, rg: 'NSW', age: 40 },
@@ -27,7 +27,7 @@ export default definePage({
     { q: 'What if one partner earns very little?', a: `A partner whose own income for MLS purposes is ${K.usd(floor.value)} or less is not liable, even when the family total is over the threshold (${floor.year} figure from the ATO's M2 instructions; the ${P.incomeYear} amount is not yet published). The other partner still pays on their own income.` },
   ],
   body: (h) => `
-<h2>Same total, different split</h2>
+<h2>MLS for a family on $230,000: same total, different split</h2>
 ${h.table(['Partner A', 'Partner B', 'Surcharge A', 'Surcharge B', 'Household'], splits.map(([a, b]) => { const x = fam(a, b); return [K.usd(a), K.usd(b), K.usd(x.you.amount), x.partner!.liable ? K.usd(x.partner!.amount) : 'not liable', K.usd(x.total)]; }), `Couple with two dependent children, combined income ${K.usd(A + B)}, tier 1, full year without hospital cover, ${P.incomeYear}.`, ['r', 'r', 'r', 'r', 'r'])}
 <p>As long as both partners are liable, the household pays the same ${K.usd(m.total)} however the income is shared, because ${K.pct(M.rates[1], 0)} of each part adds up to ${K.pct(M.rates[1], 0)} of the whole. The split only matters at the bottom, when one partner's own income for MLS purposes falls to ${K.usd(floor.value)} or less: that partner drops out and the household bill falls by their share. The ${h.a('mls-couples', 'couples page')} covers spouses for part of the year and separations.</p>
 

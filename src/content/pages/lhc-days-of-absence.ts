@@ -11,7 +11,7 @@ export default definePage({
   title: `LHC Days of Absence 2026: The ${K.num(D)} Day Gap Allowance`,
   description: `LHC days of absence in 2026: ${K.num(D)} days without hospital cover in your lifetime with no change to your loading. What does not count, and what happens after.`,
   h1: `Days of absence: the ${K.num(D)} days you can go without hospital cover`,
-  intro: 'Add up the days you have been without hospital cover since your base day and enter your current loading: you see how many days remain, or the loading you would rejoin with.',
+  intro: 'Add up your LHC days of absence, the days you have been without hospital cover since your base day, and enter your current loading: you see how many days remain, or the loading you would rejoin with.',
   resume: `Once you have held private hospital cover on or after your Lifetime Health Cover base day, you can stop it and restart it without penalty, within a lifetime limit of ${K.num(D)} days, three years less one day. These are your days of absence. They cover the gap when you change insurer, a lean year, or a break between jobs. Some periods are not taken from them: an approved suspension of your policy, time spent overseas after you cancel cover to live abroad for at least a year, and service in the ADF. Use them up, with a total gap of ${K.num(D + 1)} days or more, and you pay a loading when you rejoin: your previous loading, plus ${K.pct(L.perYear, 0)}, plus ${K.pct(L.perYear, 0)} for every further year without cover, and your ten years towards removal start again. The Ombudsman's example of Marit shows the safe side: ${K.num(1069)} days without cover and her ${K.pct(0.04, 0)} loading did not move.`,
   tool: 'absence',
   toolArg: { gap: 1069, cur: 4, rg: 'SA' },
@@ -48,7 +48,7 @@ ${h.box('Change insurer without spending days', `<p>A switch between insurers on
 <h2>Two people, the same gap, different results</h2>
 <p>The allowance only protects people who held cover on or after their base day. Take two friends who both turn 31 in 2020 and both go without hospital cover for the whole of the next four years. The first held a policy on her base day and cancelled it a month later: her gap of about four years uses up her ${K.num(D)} days and she rejoins with about ${ab(1461, 0).value}, by our estimate of the Ombudsman's rule. The second never had cover: there is no allowance to spend, and on rejoining his loading is set by his age on the 1 July before he joins, ${K.pct(K.lhc(35), 0)} at 35. The rule rewards having started, even briefly, before the deadline.</p>
 
-<h2>Counting your own days</h2>
+<h2>Counting your own LHC days of absence</h2>
 <p>Add every period without hospital cover since your base day, excluding approved suspensions and qualifying time overseas. Your current and former insurers can tell you their dates; the clearance certificate is the reference. If the total is close to ${K.num(D)}, the safest move is to rejoin before it is reached, even with a Basic policy, then compare at leisure. Basic policies that also avoid the Medicare levy surcharge start at ${K.usd2(sa / 12)} a month in South Australia (${h.a('basic-hospital-cover', 'basic hospital cover')}). The loading rules in full are on ${h.a('lifetime-health-cover-loading', 'the Lifetime Health Cover loading page')}, and the ten year count on ${h.a('lhc-10-year-removal', 'the removal page')}.</p>
 `,
   related: ['lifetime-health-cover-loading', 'lhc-10-year-removal', 'lhc-overseas-returning-australians', 'basic-hospital-cover', 'state-sa'],

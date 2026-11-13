@@ -13,7 +13,7 @@ export default definePage({
   title: 'Health Insurance Rebate Over 65 in 2026: Rates and 2027 Bill',
   description: `Health insurance rebate over 65 in 2026: ${K.pct(now[1][0], 3)} from 65 and ${K.pct(now[2][0], 3)} from 70 at the base tier, and what the bill before Parliament would cost from April 2027.`,
   h1: 'Private health insurance rebate over 65: today\'s rates and the 2027 bill',
-  intro: 'Enter the age of the oldest person on your policy, your premium and your income: you see your rebate now and what the proposed 1 April 2027 change would take off it.',
+  intro: 'Enter the age of the oldest person on your policy, your premium and your income: you see your health insurance rebate now and what the proposed 1 April 2027 change would take off it.',
   resume: `People aged 65 and over receive a higher private health insurance rebate than younger people on the same income. Until 31 March 2027, when the oldest person on the policy is 65 to 69, the rebate is ${K.pct(now[1][0], 3)} at the base tier, ${K.pct(now[1][1], 3)} at tier 1 and ${K.pct(now[1][2], 3)} at tier 2; from 70 it is ${K.pct(now[2][0], 3)}, ${K.pct(now[2][1], 3)} and ${K.pct(now[2][2], 3)}. Under 65, the same tiers give ${K.pct(now[0][0], 3)}, ${K.pct(now[0][1], 3)} and ${K.pct(now[0][2], 3)}. In July 2026 the Department of Health announced that from ${K.day(PR.from)} everyone would receive the under-65 rates, "subject to legislation passing Parliament", and put the average extra cost for those affected at ${K.usd(PR.deptAverageCost)} a year. The bill was introduced in the House of Representatives on ${K.day(PR.billIntroduced)}. On ${K.day(P.retrieved_at)} it is still ${PR.billStatus.toLowerCase()}: it is not law, and the rates you pay today are unchanged.`,
   tool: 'retiree',
   toolArg: { age: 68, gp: Math.round(medCouple), st: 'couple', inc: 90000 },
@@ -25,7 +25,7 @@ export default definePage({
     { q: 'Does the proposed change affect the Medicare levy surcharge?', a: `No. The bill concerns the rebate percentages only. The surcharge thresholds for ${P.incomeYear} (${K.usd(P.mls.single[0])} single and ${K.usd(P.mls.family[0])} for couples and families) and its rates of ${K.pct(P.mls.rates[1], 0)} to ${K.pct(P.mls.rates[3], 1)} are unchanged, and so is the Lifetime Health Cover loading.` },
   ],
   body: (h) => `
-<h2>Today's extra support, row by row</h2>
+<h2>The health insurance rebate over 65 today, row by row</h2>
 <p>The rebate has three rows. A policy whose oldest member is under 65 sits on the first; 65 to 69, the second; 70 and over, the third. On the same income, the second row adds about four points and the third about eight, at every tier except tier 3, which receives no rebate at any age.</p>
 ${h.table(['Income tier', 'Under 65', '65 to 69', '70 and over', 'Proposed from April 2027, all ages'], [0, 1, 2, 3].map((t) => [K.TN[t], K.pct(now[0][t], 3), K.pct(now[1][t], 3), K.pct(now[2][t], 3), K.pct(PR.rates[2][t], 3)]), `Rates from 1 April 2026 (${h.src('ato_rebate_rates', 'ATO')}) and the proposal of July 2026 (${h.src('health_rebate_2027', 'Department of Health')}).`, ['l', 'r', 'r', 'r', 'r'])}
 <p>The tiers for ${P.incomeYear} are the surcharge tiers: base tier up to ${K.usd(P.mls.single[0])} for a single person and ${K.usd(P.mls.family[0])} for a couple. Many retirees sit at the base tier because their income for surcharge purposes is low, even when their assets are not, and that is where the extra support is largest in dollars.</p>

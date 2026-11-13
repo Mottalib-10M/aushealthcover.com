@@ -14,7 +14,7 @@ export default definePage({
   title: 'Hospital Cover Excess for the MLS 2026: Limits in AUD',
   description: `Hospital cover excess limits that avoid the Medicare levy surcharge in 2026: ${one} on a policy for one person, ${many} on any other. Test your own excess here.`,
   h1: 'Hospital cover excess and the surcharge: the two limits that decide',
-  intro: `Pick who the policy covers and type its yearly excess: the answer says at once whether the policy is an appropriate level of cover for the surcharge.`,
+  intro: `Pick who the policy covers and type its yearly hospital cover excess: the answer says at once whether the policy is an appropriate level of cover for the MLS.`,
   resume: `A hospital policy only protects you from the Medicare levy surcharge if its excess stays within a limit: ${one} or less on a policy that covers one person, ${many} or less on every other policy, couples and families included. The ATO calls a policy within those limits an appropriate level of private patient hospital cover. The excess is the amount you pay before your insurer pays for a claim, and PrivateHealth.gov.au adds that the limit is a yearly total: if you are admitted several times in the same year, the excess you pay across those stays cannot go beyond ${one} or ${many}. The tier of the policy does not matter, nor the price, nor whether it comes with extras. A single person with an income for MLS purposes of ${K.usd(inc)} who holds a policy with a higher excess is treated as having no cover and owes ${K.usd(s.total)} of surcharge for ${P.incomeYear}. The calculator above tells you which side of the line your policy sits on.`,
   tool: 'excess',
   toolArg: { who: 'one', xs: X.single },
@@ -52,7 +52,7 @@ ${h.box('A protection from 2000 for long-standing members', `<p>A small group of
 <h2>How the limits have moved</h2>
 <p>The current limits have applied since 1 April 2019, as part of the reforms that also created the Gold, Silver, Bronze and Basic tiers. Before that date the maximum excess that avoided the surcharge was lower. A policy that was within the old limits is within the new ones; the change only opened the door to policies with a larger excess.</p>
 
-<h2>Checking your own policy</h2>
+<h2>Checking your own hospital cover excess</h2>
 <p>Three documents tell you where you stand. The Private Health Information Statement of the policy gives its excess and its tier. A statement from your insurer, which the ATO says you can ask for, gives the number of days you and your dependants held an appropriate level of cover, which is the figure your tax return needs. And if you are unsure, the ATO's advice is to ask your registered health insurer, which knows how its own excess works. Our calculator only checks the number you type against the two limits; it cannot read the conditions of a policy.</p>
 <p>If your policy falls outside the limits for part of the year, for instance because you changed product in March, the surcharge counts the days without appropriate cover. ${h.a('mls-part-year-cover', 'Part-year cover')} works that out, and ${h.a('method', 'the method page')} explains how the premiums in our tables are filtered on these same limits.</p>
 `,

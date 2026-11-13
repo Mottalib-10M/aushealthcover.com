@@ -11,8 +11,8 @@ export default definePage({
   nav: 'LHC for new migrants', card: 'Twelve months from full Medicare registration, or your usual base day if later.',
   title: 'LHC Loading for New Migrants 2026: Your 12 Month Window',
   description: `LHC loading for new migrants in 2026: no loading if you take hospital cover within 12 months of full Medicare registration, or by the 1 July after you turn 31.`,
-  h1: 'Lifetime Health Cover for new migrants: the twelve months after Medicare',
-  intro: 'Arrived recently and over 31? Enter your age on the 1 July before you would join: if your twelve months have passed, the calculator gives your loading and its price in your state.',
+  h1: 'LHC loading for new migrants: the twelve months after Medicare',
+  intro: 'Arrived recently and over 31? Enter your age on the 1 July before you would join: if your twelve months as a new migrant have passed, the calculator gives your LHC loading and its price in your state.',
   resume: `A new migrant to Australia gets a base day of their own for Lifetime Health Cover: the later of the 1 July following the 31st birthday and the first anniversary of full Medicare registration. In practice, someone who arrives at 38 and registers for Medicare has twelve months from that registration to take out private hospital cover with no loading. Full registration means registration for interim or full Medicare benefits, usually shown by a blue or green Medicare card; reciprocal Medicare does not count. Miss the twelve months and the normal rule applies: ${K.pct(L.perYear, 0)} for every year you were over 30 on the 1 July before joining. PrivateHealth.gov.au gives the case of Sonja, registered in April 2013 and insured only in October 2018 at 36: her loading is ${K.pct(sonja, 0)}. On the cheapest single policy in Western Australia, ${K.usd(wa)} a year, that is ${K.usd(wa * sonja)} more each year for ten years.`,
   tool: 'lhc',
   toolArg: { age: 38, page: 0, rg: 'WA' },
@@ -38,7 +38,7 @@ ${h.table(['Arrival situation', 'Base day', 'Loading if insured within the windo
   ['Registered at 60', 'first anniversary of registration', K.pct(0, 0), K.pct(K.lhc(62), 0)],
 ], 'Loading after a missed window, assuming the person was two years older on the 1 July before joining. The exact figure depends on the date of birth.', ['l', 'l', 'r', 'r'])}
 
-<h2>Sonja's case, step by step</h2>
+<h2>LHC loading for a new migrant: Sonja's case, step by step</h2>
 <p>The Ombudsman's example shows the order of the tests. Sonja registers for full Medicare benefits, a green card, on 20 April 2013. Her 31st birthday is on 8 January 2014. The anniversary of her registration is 20 April 2014; the 1 July after her 31st birthday is 1 July 2014. The later of the two is 1 July 2014, so that is her base day. She buys private hospital cover on 2 October 2018, aged 36, and pays ${K.pct(sonja, 0)}: (36 minus 30) times ${K.pct(L.perYear, 0)}.</p>
 <p>Had she registered at 33 instead, her base day would have been the anniversary of registration, and any policy bought in the following twelve months would have carried no loading at all.</p>
 ${h.mini('lhc', { t: 'Loading for a migrant couple who missed the window', p: ['age', 'page'], d: { age: 42, page: 39, rg: 'WA' }, c: 'Open the loading calculator' })}

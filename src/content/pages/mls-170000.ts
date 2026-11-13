@@ -44,7 +44,7 @@ ${h.mini('cover', { t: 'Test your own premium at tier 3', p: ['inc', 'prem', 'lh
 <h2>Age brings no rebate here</h2>
 <p>Below tier 3, people aged 65 and over receive a higher rebate than younger ones, up to ${K.pct(K.reb(0, 72), 3)} at the base tier from age 70. In tier 3 every age band gets 0 %. The proposal before Parliament to move the over 65 rates down to the under 65 ones from 1 April 2027 would therefore change nothing at this income: the tier 3 rebate is already zero in every row. The surcharge, likewise, does not depend on age. A retiree whose taxable income is ${K.usd(INC)} faces the same ${K.usd(m.total)} as a salaried worker on the same income. The ${h.a('rebate-over-65', 'over 65 page')} covers the lower tiers, where the proposal does matter.</p>
 
-<h2>Couples at this income</h2>
+<h2>Couples and the MLS on $170,000</h2>
 <p>For a couple, ${K.usd(INC)} on one side is not tier 3 unless the combined income is over ${K.usd(M.family[2])}. With a partner earning ${K.usd(60000)}, the couple's ${K.usd(INC + 60000)} is in ${K.TN[K.tier(INC + 60000, 'couple')].toLowerCase()} of the family scale, with a rebate of ${K.pct(K.reb(K.tier(INC + 60000, 'couple'), 35), 3)}. The ${h.a('mls-family-230000', 'family $230,000 page')} works through that case with children.</p>
 `,
   related: ['mls-150000', 'mls-thresholds', 'income-for-mls-purposes', 'private-health-insurance-rebate', 'compare-health-insurance', 'mls-family-230000'],
